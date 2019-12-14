@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 
@@ -17,13 +18,10 @@ public class BodToken : MonoBehaviour
 	public Animator effectAnimator;
 
 	// Sprite references
-	private IEnumerator bodSpriteCoroutine;
 	public SpriteRenderer currentSprite;
 	public Sprite[] currentSpriteSet;
 	bool facingLeft;
-	bool isSpriteRepeating;
 	string spritePath;
-	private IEnumerator effectSpriteCoroutine;
 	public SpriteRenderer effectSprite;
 	Sprite[] currentEffectSet;
 	string effectSpritePath;
@@ -89,53 +87,6 @@ public class BodToken : MonoBehaviour
 		}
 
 	}
-	private void StartNewSpriteAnimation()
-	{
-		if (bodSpriteCoroutine != null)
-			StopCoroutine(bodSpriteCoroutine);
-
-		bodSpriteCoroutine = RunSpriteSet();
-		StartCoroutine(bodSpriteCoroutine);
-	}
-	private IEnumerator RunSpriteSet()
-	{
-//		Debug.Log ("Running Sprite Set");
-
-		for (int i = 0; i < currentSpriteSet.Length; i++)
-		{
-//			Debug.Log ("Setting Sprite: " + i);
-			currentSprite.sprite = currentSpriteSet[i];
-
-			yield return new WaitForSeconds(0.5f);
-		}
-
-		if (isSpriteRepeating)
-			StartNewSpriteAnimation();
-	}
-	public bool isAnimatingEffect;
-	public void StartNewEffectAnimation()
-	{
-		isAnimatingEffect = true;
-
-		if (effectSpriteCoroutine != null)
-			StopCoroutine(effectSpriteCoroutine);
-
-		effectSpriteCoroutine = RunEffectSprite();
-		StartCoroutine(effectSpriteCoroutine);
-	}
-	private IEnumerator RunEffectSprite()
-	{
-		Debug.Log ("Running effect sprite: "  + currentEffectSet.Length);
-		for (int i = 0; i < currentEffectSet.Length; i++)
-		{
-			effectSprite.sprite = currentEffectSet[i];
-			yield return new WaitForSeconds(0.05f);
-		}
-
-		Debug.Log ("Finished running effect sprite");
-		effectSprite.sprite = null;
-		isAnimatingEffect = false;
-	}
 	public void SetEffectSpritePath(string pathStr)
 	{
 		object[] loadedEffectSprites = Resources.LoadAll("Sprites/Effects/" + pathStr, typeof(Sprite));
@@ -149,6 +100,7 @@ public class BodToken : MonoBehaviour
 	}
 	public void SetBodSpriteForSkill(SkillType skillType)
 	{
+		Debug.Log("Setting Skill Type Sprite: " + skillType);
 		switch (skillType)
 		{
 		case SkillType.Burst:
@@ -164,7 +116,6 @@ public class BodToken : MonoBehaviour
 			break;
 		}
 	}
-
 	public void SetBodSprite(string path, bool repeat = true)
 	{
 		object[] loadedSprites = Resources.LoadAll(spritePath + "/" + path, typeof(Sprite));
@@ -175,9 +126,8 @@ public class BodToken : MonoBehaviour
 		{
 			currentSpriteSet[i] = (Sprite)loadedSprites[i];
 		}
-		
-		isSpriteRepeating = repeat;
-		StartNewSpriteAnimation();
+
+		currentSprite.sprite = currentSpriteSet[0];
 	}
 	public void SetStanding()
 	{

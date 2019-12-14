@@ -43,6 +43,14 @@ public class BattleManager : MonoBehaviour
 		instance = this;
 		battleActive = false;
 		turnOrder = new List<BodToken>();
+
+		// TODO: Find better place for this
+		UniversalValues.minZoom = -750.0f;
+		UniversalValues.maxZoom = 0.0f;
+		UniversalValues.minPosX = -350.0f;
+		UniversalValues.maxPosX = 350.0f;
+		UniversalValues.minPosY = -150.0f;
+		UniversalValues.maxPosY = 150.0f;
 	}
 
 	private void StartBattle()
@@ -397,6 +405,7 @@ public class BattleManager : MonoBehaviour
 		if (battleActive && ControlsManager.instance.controlEvent != ControlsEvent.NONE) 
 		{
 			Debug.Log ("Key event w/ Control: " + ControlsManager.instance.controlEvent);
+			Debug.Log("Zoom: " + Camera.main.transform.position.z);
 
 			// Move Key Control Calls
 			if (isMoving)
@@ -434,25 +443,77 @@ public class BattleManager : MonoBehaviour
 				}
 			}
 			// Move Camera Control Calls
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_LEFT)
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.KEY_PLUS &&
+						Camera.main.transform.position.z < UniversalValues.maxZoom)
+			{
+				// Zoom in
+				Debug.Log("1");
+				Camera.main.transform.Translate(new Vector3(0, 0, 5.0f));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.KEY_MINUS &&
+						Camera.main.transform.position.z > UniversalValues.minZoom)
+			{
+				// Zoom out
+				Debug.Log("2");
+				Camera.main.transform.Translate(new Vector3(0, 0, -5.0f));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_UP_LEFT &&
+						Camera.main.transform.position.x > UniversalValues.minPosX  &&
+						Camera.main.transform.position.y < UniversalValues.maxPosY)
+			{
+				// Move Camera Diagonal Up + Left
+				Camera.main.transform.Translate(new Vector3(-2.5f, 2.5f, 0));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_UP_RIGHT &&
+						Camera.main.transform.position.x < UniversalValues.maxPosX &&
+						Camera.main.transform.position.y < UniversalValues.maxPosY)
+			{
+				// Move Camera Diagonal Up + Right
+				Camera.main.transform.Translate(new Vector3(2.5f, 2.5f, 0));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_DOWN_LEFT &&
+						Camera.main.transform.position.x > UniversalValues.minPosX &&
+						Camera.main.transform.position.y > UniversalValues.minPosY)
+			{
+				// Move Camera Diagonal Down + Left
+				Camera.main.transform.Translate(new Vector3(-2.5f, -2.5f, 0));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_DOWN_RIGHT &&
+						Camera.main.transform.position.x < UniversalValues.maxPosX &&
+						Camera.main.transform.position.y > UniversalValues.minPosY)
+			{
+				// Move Camera Diagonal Down + Right
+				Camera.main.transform.Translate(new Vector3(2.5f, -2.5f, 0));
+				ControlsManager.instance.readActiveInput = true;
+			}
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_LEFT &&
+						Camera.main.transform.position.x > UniversalValues.minPosX)
 			{
 				// Move Camera Left
 				Camera.main.transform.Translate(new Vector3(-5,0,0));
 				ControlsManager.instance.readActiveInput = true;
 			}
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_RIGHT)
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_RIGHT &&
+						Camera.main.transform.position.x < UniversalValues.maxPosX)
 			{
 				// Move Camera Right
 				Camera.main.transform.Translate(new Vector3(5,0,0));
 				ControlsManager.instance.readActiveInput = true;
 			}
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_UP)
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_UP &&
+						Camera.main.transform.position.y < UniversalValues.maxPosY)
 			{
 				// Move Camera Up
 				Camera.main.transform.Translate(new Vector3(0,5,0));
 				ControlsManager.instance.readActiveInput = true;
 			}
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DOWN)
+			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DOWN &&
+						Camera.main.transform.position.y > UniversalValues.minPosY)
 			{
 				// Move Camera Down
 				Camera.main.transform.Translate(new Vector3(0,-5,0));

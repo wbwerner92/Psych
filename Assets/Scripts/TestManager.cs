@@ -16,8 +16,13 @@ public class TestManager : MonoBehaviour
 
 	public IEnumerator WaitToStartTest()
 	{
-		while (BodManager.instance == null || SkillManager.instance == null || BattleManager.instance == null || ControlsManager.instance == null
-		       || SpriteManager.instance == null || EffectsManager.instance == null)
+		while (BodManager.instance == null || 
+				SkillManager.instance == null || 
+				BattleManager.instance == null || 
+				ControlsManager.instance == null || 
+				SpriteManager.instance == null || 
+				EffectsManager.instance == null ||
+				MainCameraManager.instance == null)
 			yield return null;
 
 		Debug.Log("Instances Loaded");

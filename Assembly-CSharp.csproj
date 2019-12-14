@@ -66,11 +66,13 @@
      <Compile Include="Assets\Scripts\BodToken.cs" />
      <Compile Include="Assets\Scripts\ControlsManager.cs" />
      <Compile Include="Assets\Scripts\EffectsManager.cs" />
+     <Compile Include="Assets\Scripts\MainCameraManager.cs" />
      <Compile Include="Assets\Scripts\Skill.cs" />
      <Compile Include="Assets\Scripts\SkillManager.cs" />
      <Compile Include="Assets\Scripts\SpriteManager.cs" />
      <Compile Include="Assets\Scripts\SpritePackage.cs" />
      <Compile Include="Assets\Scripts\TestManager.cs" />
+     <Compile Include="Assets\Scripts\UniversalValues.cs" />
      <None Include="Assets\Resources\Shaders\SpriteOutline.shader" />
      <None Include="Assets\Resources\Shaders\Outline 2.shader" />
  <Reference Include="Unity.Timeline.Editor">

@@ -8,6 +8,12 @@ public enum ControlsEvent
 	ARROW_UP,
 	ARROW_DOWN,
 	ARROW_RIGHT,
+	ARROW_DIAGONAL_UP_LEFT,
+	ARROW_DIAGONAL_UP_RIGHT,
+	ARROW_DIAGONAL_DOWN_LEFT,
+	ARROW_DIAGONAL_DOWN_RIGHT,
+	KEY_PLUS,
+	KEY_MINUS,
 	KEY_0,
 	KEY_1,
 	KEY_2,
@@ -74,7 +80,15 @@ public class ControlsManager : MonoBehaviour
 
 	public void ReadInput()
 	{
-		if (Input.GetKey(KeyCode.LeftArrow))
+		if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+			currentEvent = ControlsEvent.ARROW_DIAGONAL_UP_LEFT;
+		else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
+			currentEvent = ControlsEvent.ARROW_DIAGONAL_UP_RIGHT;
+		else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+			currentEvent = ControlsEvent.ARROW_DIAGONAL_DOWN_LEFT;
+		else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
+			currentEvent = ControlsEvent.ARROW_DIAGONAL_DOWN_RIGHT;
+		else if (Input.GetKey(KeyCode.LeftArrow))
 			currentEvent = ControlsEvent.ARROW_LEFT;
 		else if (Input.GetKey(KeyCode.RightArrow))
 			currentEvent = ControlsEvent.ARROW_RIGHT;
@@ -82,6 +96,10 @@ public class ControlsManager : MonoBehaviour
 			currentEvent = ControlsEvent.ARROW_UP;
 		else if (Input.GetKey(KeyCode.DownArrow))
 			currentEvent = ControlsEvent.ARROW_DOWN;
+		else if (Input.GetKey(KeyCode.Equals))
+			currentEvent = ControlsEvent.KEY_PLUS;
+		else if (Input.GetKey(KeyCode.Minus))
+			currentEvent = ControlsEvent.KEY_MINUS;
 		else if (Input.GetKey(KeyCode.Alpha0))
 			currentEvent = ControlsEvent.KEY_0;
 		else if (Input.GetKey(KeyCode.Alpha1))

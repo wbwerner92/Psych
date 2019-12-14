@@ -73,8 +73,6 @@ public class BattleSpace
 		// Invoke the skill
 		loadedSkill.action.Invoke(loadedSkill.user, (target == null) ? null : target.bodRef, new Vector2(posX, posY));
 
-		EffectsManager.instance.RunChainAnimationSequentially(tokenList);
-
 		user.UpdateStatsBars();
 		if (target != null)
 			target.UpdateStatsBars();
