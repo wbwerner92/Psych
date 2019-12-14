@@ -73,7 +73,7 @@ public class SkillManager : MonoBehaviour
 		skillId = "basic_strike";
 		newSkill = new Skill(
 			skillId,
-			"Attack",
+			"Strike",
 			"",
 			"",
 			SkillType.Physical,
@@ -81,7 +81,7 @@ public class SkillManager : MonoBehaviour
 			1,
 			delegate (Bod user, Bod target, Vector2 targetPos)
 			{
-				Debug.Log (user.name + " strikes " + target.name);
+				BattleManager.instance.AddActionDisplayText(user.name + " strikes " + target.name);
 
 				// Get Attack Power and Aim
 				int atkPower = user.str;
@@ -96,12 +96,12 @@ public class SkillManager : MonoBehaviour
 
 				if (dodgeVal >= atkAim && target.ap > 0)
 				{
-					Debug.Log (target.name + " dodges!");
+					BattleManager.instance.AddActionDisplayText(target.name + " dodges!");
 					target.ap --;
 				}
 				else
 				{
-					Debug.Log ("Hit!");
+					BattleManager.instance.AddActionDisplayText("Hit!");
 
 					// Get Block/Dmg Absorption
 					int blockVal = BodManager.instance.FortRoll(target);
@@ -114,7 +114,7 @@ public class SkillManager : MonoBehaviour
 						if (blockVal > atkPower)
 							blockVal = atkPower;
 
-						Debug.Log (target.name + " absorbs " + blockVal + " damage.");
+						BattleManager.instance.AddActionDisplayText(target.name + " absorbs " + blockVal + " damage.");
 
 						atkPower -= blockVal;
 						target.ap --;
@@ -128,7 +128,7 @@ public class SkillManager : MonoBehaviour
 						int knockbackVal = blockVal * 2;
 						while (target.dead == false && atkPower > knockbackVal)
 						{
-							Debug.Log ("Knockback " + target.name);
+							BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
 
 							BattleManager.instance.Knockback(targetPos);
 

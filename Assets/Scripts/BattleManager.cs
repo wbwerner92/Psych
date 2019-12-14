@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
 	private List<BodToken> tokens;
 	public ActionMenu actionMenu;
 	public Text roundText;
+	public Text actionDisplayText;
 
 	// Battle Variables
 	private bool battleActive;
@@ -67,6 +68,7 @@ public class BattleManager : MonoBehaviour
 		UpdateRoundText();
 		battleTeams = new List<BattleTeam>();
 		tokens = new List<BodToken>();
+		actionDisplayText.text = "";
 	}
 	private void UpdateRoundText()
 	{
@@ -400,12 +402,20 @@ public class BattleManager : MonoBehaviour
 			ShowSkillUseAvailability(skill, new Vector2((space.x + 1), space.y));
 	}
 
+	/// <summary>
+	/// Adds display text for a Battle Action
+	/// </summary>
+	/// <param name="actionText">New action text</param>
+	public void AddActionDisplayText(string actionText)
+	{
+		Debug.Log(actionText);
+		actionDisplayText.text = actionDisplayText.text + "\n" + actionText;
+	}
 	void Update()
 	{
 		if (battleActive && ControlsManager.instance.controlEvent != ControlsEvent.NONE) 
 		{
 			Debug.Log ("Key event w/ Control: " + ControlsManager.instance.controlEvent);
-			Debug.Log("Zoom: " + Camera.main.transform.position.z);
 
 			// Move Key Control Calls
 			if (isMoving)
@@ -447,16 +457,14 @@ public class BattleManager : MonoBehaviour
 						Camera.main.transform.position.z < UniversalValues.maxZoom)
 			{
 				// Zoom in
-				Debug.Log("1");
-				Camera.main.transform.Translate(new Vector3(0, 0, 5.0f));
+				Camera.main.transform.Translate(new Vector3(0, 0, 5));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.KEY_MINUS &&
 						Camera.main.transform.position.z > UniversalValues.minZoom)
 			{
 				// Zoom out
-				Debug.Log("2");
-				Camera.main.transform.Translate(new Vector3(0, 0, -5.0f));
+				Camera.main.transform.Translate(new Vector3(0, 0, -5));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_UP_LEFT &&
@@ -464,7 +472,7 @@ public class BattleManager : MonoBehaviour
 						Camera.main.transform.position.y < UniversalValues.maxPosY)
 			{
 				// Move Camera Diagonal Up + Left
-				Camera.main.transform.Translate(new Vector3(-2.5f, 2.5f, 0));
+				Camera.main.transform.Translate(new Vector3(-5, 5, 0));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_UP_RIGHT &&
@@ -472,7 +480,7 @@ public class BattleManager : MonoBehaviour
 						Camera.main.transform.position.y < UniversalValues.maxPosY)
 			{
 				// Move Camera Diagonal Up + Right
-				Camera.main.transform.Translate(new Vector3(2.5f, 2.5f, 0));
+				Camera.main.transform.Translate(new Vector3(5, 5, 0));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_DOWN_LEFT &&
@@ -480,7 +488,7 @@ public class BattleManager : MonoBehaviour
 						Camera.main.transform.position.y > UniversalValues.minPosY)
 			{
 				// Move Camera Diagonal Down + Left
-				Camera.main.transform.Translate(new Vector3(-2.5f, -2.5f, 0));
+				Camera.main.transform.Translate(new Vector3(-5, -5, 0));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_DIAGONAL_DOWN_RIGHT &&
@@ -488,7 +496,7 @@ public class BattleManager : MonoBehaviour
 						Camera.main.transform.position.y > UniversalValues.minPosY)
 			{
 				// Move Camera Diagonal Down + Right
-				Camera.main.transform.Translate(new Vector3(2.5f, -2.5f, 0));
+				Camera.main.transform.Translate(new Vector3(5, -5, 0));
 				ControlsManager.instance.readActiveInput = true;
 			}
 			else if (ControlsManager.instance.controlEvent == ControlsEvent.ARROW_LEFT &&

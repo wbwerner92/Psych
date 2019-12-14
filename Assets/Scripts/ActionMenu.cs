@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class ActionMenu : MonoBehaviour 
 {
+	public Text bodNameText;
 	public GameObject mainButtonSet;
 	public GameObject actionTypeButtonSet;
 	public GameObject burstButton;
@@ -29,6 +31,8 @@ public class ActionMenu : MonoBehaviour
 		bod = b;
 
 		Debug.Log (BodManager.instance.GetStats(bod));
+
+		bodNameText.text = bod.name;
 
 		mainButtonSet.SetActive(true);
 		actionTypeButtonSet.SetActive(false);
@@ -72,6 +76,7 @@ public class ActionMenu : MonoBehaviour
 			delegate (Bod user, Bod target, Vector2 targetPos)
 			{
 				Debug.Log ("Moving: " + user.name);
+				BattleManager.instance.AddActionDisplayText(user.name + " moved to position (" + targetPos.x + ", " + targetPos.y + ")");
 				BattleManager.instance.PerformMove(BattleManager.instance.ActiveToken, targetPos);
 				user.ap --;
 			},

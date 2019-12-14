@@ -8,13 +8,21 @@ public static class UniversalValues
     private static float m_minZoom;
     public static float minZoom
     {
-        get {Debug.Log("Min Zoom: " + m_minZoom); return m_minZoom;}
+        get 
+        {
+            // Debug.Log("Min Zoom: " + m_minZoom);
+            return m_minZoom;
+        }
         set {m_minZoom = value;}
     }
     private static float m_maxZoom;
     public static float maxZoom
     {
-        get {Debug.Log("Max Zoom: " + m_maxZoom); return m_maxZoom;}
+        get 
+        {
+            // Debug.Log("Max Zoom: " + m_maxZoom);
+            return m_maxZoom;
+        }
         set {m_maxZoom = value;}
     }
 
@@ -22,25 +30,41 @@ public static class UniversalValues
     private static float m_minPosX;
     public static float minPosX
     {
-        get {return m_minPosX;}
+        get 
+        {
+            // Debug.Log("Min Pos X: " + m_minPosX);
+            return m_minPosX;
+        }
         set {m_minPosX = value;}
     }
     private static float m_maxPosX;
     public static float maxPosX
     {
-        get {return m_maxPosX;}
+        get 
+        {
+            // Debug.Log("Max Pos X: " + m_maxPosX);
+            return m_maxPosX;
+        }
         set {m_maxPosX = value;}
     }
     private static float m_minPosY;
     public static float minPosY
     {
-        get {return m_minPosY;}
+        get 
+        {
+            // Debug.Log("Min Pos Y: " + m_minPosY);
+            return m_minPosY;
+        }
         set {m_minPosY = value;}
     }
     private static float m_maxPosY;
     public static float maxPosY
     {
-        get {return m_maxPosY;}
+        get 
+        {
+            // Debug.Log("Max Pos Y: " + m_maxPosY);
+            return m_maxPosY;
+        }
         set {m_maxPosY = value;}
     }
 }
