@@ -42,38 +42,41 @@ public class SpritePackage : MonoBehaviour
 		{
 			case "package_1":
 				// Debug.Log("Setting package 1 Sprites");
-				standingSprites = SpriteManager.instance.bod_1_stand;
-				burstSprites = SpriteManager.instance.bod_1_burst;
-				riseSprites = SpriteManager.instance.bod_1_rise;
-				tranceSprties = SpriteManager.instance.bod_1_trance;
+				standingSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_stand");
+				burstSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_burst");
+				riseSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_rise");
+				tranceSprties = SpriteManager.instance.GetArrayRefSprite("bod_1_trance");
 				break;
 			case "package_2":
 				// Debug.Log("Setting package 2 Sprites");
-				standingSprites = SpriteManager.instance.bod_2_stand;
-				burstSprites = SpriteManager.instance.bod_2_burst;
-				riseSprites = SpriteManager.instance.bod_2_rise;
-				tranceSprties = SpriteManager.instance.bod_2_trance;
+				standingSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_stand");
+				burstSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_burst");
+				riseSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_rise");
+				tranceSprties = SpriteManager.instance.GetArrayRefSprite("bod_2_trance");
 				break;
 			default:
 				break;
 		}
 	}
 
-	public void FlipSprite()
+	public void FlipSprite(bool faceLeft)
 	{
-		if (currentMobSprite == null)
+		if (currentMobSprite == null || currentEffectSprite == null)
 		{
 			return;
 		}
+
+		facingLeft = faceLeft;
+
 		if (facingLeft) 
 		{
-			currentMobSprite.transform.Rotate(new Vector3 (0, 180, 0));
-			facingLeft = false;
+			currentMobSprite.transform.Rotate(new Vector3 (0, 0, 0));
+			currentEffectSprite.transform.Rotate(new Vector3 (0, 180, 0));
 		}
 		else
 		{
-			currentMobSprite.transform.Rotate(new Vector3 (0, 0, 0));
-			facingLeft = true;
+			currentMobSprite.transform.Rotate(new Vector3 (0, 180, 0));
+			currentEffectSprite.transform.Rotate(new Vector3 (0, 0, 0));
 		}
 
 	}

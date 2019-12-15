@@ -62,35 +62,35 @@ public class BodMenu : MonoBehaviour
 
 		strText.text = bod.str + "/" + bod.strCore;
 		if (bod.str > bod.strCore)
-			strIcon.sprite = SpriteManager.instance.stat_up_icon;
+			strIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_up_icon");
 		else if (bod.str < bod.strCore)
-			strIcon.sprite = SpriteManager.instance.stat_down_icon;
+			strIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_down_icon");
 		else
-			strIcon.sprite = SpriteManager.instance.state_even_icon;
+			strIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_even_icon");
 
 		endText.text = bod.end + "/" + bod.endCore;
 		if (bod.end > bod.endCore)
-			endIcon.sprite = SpriteManager.instance.stat_up_icon;
+			endIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_up_icon");
 		else if (bod.end < bod.endCore)
-			endIcon.sprite = SpriteManager.instance.stat_down_icon;
+			endIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_down_icon");
 		else
-			endIcon.sprite = SpriteManager.instance.state_even_icon;
+			endIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_even_icon");
 
 		dexText.text = bod.dex + "/" + bod.dexCore;
 		if (bod.dex > bod.dexCore)
-			dexIcon.sprite = SpriteManager.instance.stat_up_icon;
+			dexIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_up_icon");
 		else if (bod.dex < bod.dexCore)
-			dexIcon.sprite = SpriteManager.instance.stat_down_icon;
+			dexIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_down_icon");
 		else
-			dexIcon.sprite = SpriteManager.instance.state_even_icon;
+			dexIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_even_icon");
 
 		spdText.text = bod.spd + "/" + bod.spdCore;
 		if (bod.spd > bod.spdCore)
-			spdIcon.sprite = SpriteManager.instance.stat_up_icon;
+			spdIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_up_icon");
 		else if (bod.spd < bod.spdCore)
-			spdIcon.sprite = SpriteManager.instance.stat_down_icon;
+			spdIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_down_icon");
 		else
-			spdIcon.sprite = SpriteManager.instance.state_even_icon;
+			spdIcon.sprite = SpriteManager.instance.GetSingleRefSprite("stat_even_icon");
 	}
 
 	public void SetTransform()

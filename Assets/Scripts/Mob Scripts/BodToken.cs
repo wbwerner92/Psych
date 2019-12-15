@@ -56,10 +56,7 @@ public class BodToken : MonoBehaviour
 		GameObject newSpritePackage = Instantiate(SpriteManager.instance.spritePackagePrefab, spriteDisplay.transform);
 		spritePackage = newSpritePackage.GetComponent<SpritePackage>();
 		spritePackage.SetBodPackage(bod.spritePath);
-		if (!faceLeft)
-		{
-			spritePackage.FlipSprite();
-		}
+		spritePackage.FlipSprite(faceLeft);
 		spritePackage.SetStanding();
 		
 

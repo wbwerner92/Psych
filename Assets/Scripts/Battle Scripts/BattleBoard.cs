@@ -34,13 +34,13 @@ public class BattleSpace
 		if (active)
 		{
 			isActive = true;
-			spaceImg.sprite = SpriteManager.instance.circle_icon;
+			spaceImg.sprite = SpriteManager.instance.GetSingleRefSprite("circle_icon");
 			BattleManager.instance.battleBoard.activeSpaces.Add(this);
 		}
 		else
 		{
 			isActive = false;
-			spaceImg.sprite = SpriteManager.instance.blank_space;
+			spaceImg.sprite = SpriteManager.instance.GetSingleRefSprite("blank_space");
 
 			if (BattleManager.instance.battleBoard.activeSpaces.Contains(this))
 				BattleManager.instance.battleBoard.activeSpaces.Remove(this);
