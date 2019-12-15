@@ -33,6 +33,6 @@ public class Bod : Mob
 		name = "Bod";
 		learnedSkills = new Dictionary<string, Skill>();
 		BodManager.instance.GenerateNewPlayerCharacter(this);
-		spritePath = "Sprites/package_1/Sprite_Package_1";
+		spritePath = "package_1";
 	}
 }

@@ -46,20 +46,20 @@ public class BodManager : MonoBehaviour
 	}
 	public void LearnSkill(Bod bod, Skill skill)
 	{
-		Debug.Log ("Learn skill: " + skill.name);
+		// Debug.Log ("Learn skill: " + skill.name);
 
 		if (bod.learnedSkills.ContainsKey(skill.id))
 		{
-			Debug.Log(bod.name + " already knows this skill");
+			// Debug.Log(bod.name + " already knows this skill");
 			return;
 		}
 		if (skill.requirements(bod) == false)
 		{
-			Debug.Log(bod.name + " does not meet the requirments to learn: " + skill.name);
+			// Debug.Log(bod.name + " does not meet the requirments to learn: " + skill.name);
 			return;
 		}
 
-		Debug.Log(bod.name + " learned " + skill.name + ", maxRange: " + skill.rangeMax);
+		// Debug.Log(bod.name + " learned " + skill.name + ", maxRange: " + skill.rangeMax);
 		bod.learnedSkills.Add(skill.id, skill);
 		skill.user = bod;
 	}
@@ -94,13 +94,13 @@ public class BodManager : MonoBehaviour
 
 	public void TakeDamage(Bod bod, int dmg)
 	{
-		Debug.Log (bod.name + " takes " + dmg + " damage!");
+		BattleManager.instance.AddActionDisplayText(bod.name + " takes " + dmg + " damage!");
 
 		bod.hp -= dmg;
 
 		if (bod.hp <= 0)
 		{
-			Debug.Log(bod.name + " died!");
+			BattleManager.instance.BodDefeated(bod);
 			bod.hp = 0;
 			bod.dead = true;
 		}
@@ -111,10 +111,10 @@ public class BodManager : MonoBehaviour
 		string returnStr = "";
 		returnStr += 
 				"Name: " + bod.name + "\n" + 
-				"Strength: " + bod.str + "\\" + bod.strCore + "\n" +
-				"Endurance: " + bod.end + "\\" + bod.endCore + "\n" + 
-				"Dexterity: " + bod.dex + "\\" + bod.dexCore + "\n" + 
-				"Speed: " + bod.spd + "\\" + bod.spdCore + "\n" +
+				"Strength: " + bod.str + " (" + bod.strCore + ")\n" +
+				"Endurance: " + bod.end + " (" + bod.endCore + ")\n" + 
+				"Dexterity: " + bod.dex + " (" + bod.dexCore + ")\n" + 
+				"Speed: " + bod.spd + " (" + bod.spdCore + ")\n" +
 				"Burst: " + bod.burst + "\n" + 
 				"Rise: " + bod.rise + "\n" + 
 				"Trance: " + bod.trance;

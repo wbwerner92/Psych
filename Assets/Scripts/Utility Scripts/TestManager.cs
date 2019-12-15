@@ -32,25 +32,25 @@ public class TestManager : MonoBehaviour
 	public void StartTest()
 	{
 		Bod bod1 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod1));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod1));
 		bod1.name = "Bod 1";
 		Bod bod2 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod2));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod2));
 		bod2.name = "Bod 2";
 		Bod bod3 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod3));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod3));
 		bod3.name = "Bod 3";
 		Bod bod4 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod4));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod4));
 		bod4.name = "Bod 4";
 		Bod bod5 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod5));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod5));
 		bod5.name = "Bod 5";
-		bod5.spritePath = "Sprites/package_2/Sprite_Package_2";
+		bod5.spritePath = "package_2";
 		Bod bod6 = new Bod();
-		Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod6));
+		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod6));
 		bod6.name = "Bod 6";
-		bod6.spritePath = "Sprites/package_2/Sprite_Package_2";
+		bod6.spritePath = "package_2";
 
 		BattleTeam team1 = new BattleTeam();
 		team1.AddMember(bod1);

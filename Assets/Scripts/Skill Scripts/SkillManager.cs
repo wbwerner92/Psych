@@ -190,6 +190,8 @@ public class SkillManager : MonoBehaviour
 			{
 				Debug.Log ("Psy Bolt Action");
 
+				BattleManager.instance.AddActionDisplayText(user.name + " fires a Psy Bolt at " + target.name + "!");
+
 				int pow = user.burst;
 				int resist = (target.stress < BodManager.instance.GetBodMind(target)) ? BodManager.instance.MindRoll(target) : 0;
 				if (resist > pow)
@@ -199,9 +201,15 @@ public class SkillManager : MonoBehaviour
 
 				if (resist > 0)
 				{
-					Debug.Log(target.name + " resists " + resist + " effect");
+					BattleManager.instance.AddActionDisplayText(target.name + " resists " + resist + " effect");
 					pow -= resist;
 					target.stress ++;
+
+					// TODO: Target Sprite = Resist Damage
+				}
+				else
+				{
+					// TODO: Target Sprite = Take Damage
 				}
 				
 				if (pow > 0)
@@ -270,9 +278,9 @@ public class SkillManager : MonoBehaviour
 			
 			int pow = user.rise;
 
-			Debug.Log(user.name + " raises str by : " + pow);
-			user.str += pow;
+			BattleManager.instance.AddActionDisplayText(user.name + " raises str by : " + pow);
 
+			user.str += pow;
 			user.stress ++;
 		},
 			delegate(Bod user) {
@@ -316,7 +324,7 @@ public class SkillManager : MonoBehaviour
 			skillId,
 			"Scan",
 			"TranceWave",
-			"",
+			"TranceWave",
 			SkillType.Trance,
 			1,
 			3,
@@ -333,14 +341,13 @@ public class SkillManager : MonoBehaviour
 				
 				if (resist >= pow)
 				{
-					Debug.Log(target.name + " resists " + resist + " effect from Scan");
+					BattleManager.instance.AddActionDisplayText(target.name + " resists " + resist + " effect from Scan");
 					pow -= resist;
 					target.stress ++;
 				}
-				
-				if (pow > 0)
+				else
 				{
-					Debug.Log(user.name + " scans info from " + target.name + ": " + BodManager.instance.GetStats(target));
+					BattleManager.instance.AddActionDisplayText(user.name + " scans info from " + target.name + ":\n" + BodManager.instance.GetStats(target));
 				}
 				
 				user.stress ++;

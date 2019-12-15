@@ -217,9 +217,9 @@ public class BattleManager : MonoBehaviour
 
 		battleBoard.SetBodTokenToPosition(token, (int)pos.x, (int)pos.y);
 	}
-	public void Knockback(Vector2 targetPos)
+	public void Knockback(Vector2 targetPos, int knockVal = 1)
 	{
-		Debug.Log ("Knockback");
+		Debug.Log ("Knockback, Knock Val: " + knockVal);
 
 		int diffX = activeToken.posX - (int)targetPos.x;
 		int diffY = activeToken.posY - (int)targetPos.y;
@@ -230,7 +230,6 @@ public class BattleManager : MonoBehaviour
 		if (diffX > diffY || (diffX == diffY && Random.Range(0, 2) == 0))
 		{
 			// Horizontal move
-
 			if (activeToken.posX > (int)targetPos.x)
 			{
 				// Kockback left
@@ -259,7 +258,6 @@ public class BattleManager : MonoBehaviour
 		else
 		{
 			// Veritical move
-
 			if (activeToken.posY > (int)targetPos.y)
 			{
 				// Knockback up
@@ -291,7 +289,20 @@ public class BattleManager : MonoBehaviour
 			Debug.Log ("Setting Knockback position");
 			MoveToken(token, knockbackPos);
 		}
+	}
 
+	public void BodDefeated(Bod bod)
+	{
+		AddActionDisplayText(bod.name + " died!");
+		foreach (BodToken token in tokens)
+		{
+			if (token.bodRef == bod)
+			{
+				battleBoard.tokenPositions[token.posX, token.posY] = null;
+				Destroy(token.gameObject);
+				break;
+			}
+		}
 	}
 
 	public void NextTurn()

@@ -60,16 +60,16 @@ public class BattleSpace
 		user.SetBodSpriteForSkill(loadedSkill.skillType);
 		if (loadedSkill.userEffectSpritePath != "")
 		{
-//			Debug.Log ("User effect anim: " + loadedSkill.userEffectSpritePath + ".");
-			// user.SetEffectSpritePath(loadedSkill.userEffectSpritePath);
+			Debug.Log ("User effect anim: " + loadedSkill.userEffectSpritePath + ".");
+			user.SetEffectSprite(loadedSkill.userEffectSpritePath);
 			tokenList.Add(user);
 		}
 
 		BodToken target = BattleManager.instance.battleBoard.tokenPositions[posX, posY];
 		if (loadedSkill.targetEffectSpritePath != "")
 		{
-//			Debug.Log ("Target effect anim: " + loadedSkill.targetEffectSpritePath + ".");
-			// target.SetEffectSpritePath(loadedSkill.targetEffectSpritePath);
+			Debug.Log ("Target effect anim: " + loadedSkill.targetEffectSpritePath + ".");
+			target.SetEffectSprite(loadedSkill.targetEffectSpritePath);
 			tokenList.Add(target);
 		}
 

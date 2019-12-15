@@ -53,13 +53,15 @@ public class BodToken : MonoBehaviour
 		bod = b;
 
 		// Set SpritePackage
-		string spritePath = bod.spritePath;
-		spritePackage = Instantiate(Resources.Load<SpritePackage>(spritePath), spriteDisplay.transform);
-		spritePackage.SetStanding();
+		GameObject newSpritePackage = Instantiate(SpriteManager.instance.spritePackagePrefab, spriteDisplay.transform);
+		spritePackage = newSpritePackage.GetComponent<SpritePackage>();
+		spritePackage.SetBodPackage(bod.spritePath);
 		if (!faceLeft)
 		{
 			spritePackage.FlipSprite();
 		}
+		spritePackage.SetStanding();
+		
 
 		if (BodManager.instance.GetBodMind(bod) == 0)
 		{
@@ -87,6 +89,13 @@ public class BodToken : MonoBehaviour
 				break;
 		}
 	}
+	public void SetEffectSprite(string spritePath)
+	{
+		if (spritePackage != null)
+		{
+			spritePackage.SetEffectSprites(spritePath);
+		}
+	}
 	
 	public void ToggleBodMenu()
 	{
@@ -98,7 +107,7 @@ public class BodToken : MonoBehaviour
 
 	public void BodTokenPressed()
 	{
-		Debug.Log("Bod Token: " + bod.name + " pressed");
+		Debug.Log("Bod Token: " + bod.name + " pressed\n" + BodManager.instance.GetStats(bod));
 
 		if (BattleManager.instance.BattleActive)
 		{
