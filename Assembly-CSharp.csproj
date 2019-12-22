@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Skill Scripts\SkillManager.cs" />
      <Compile Include="Assets\Scripts\Sprite Scripts\SpriteManager.cs" />
      <Compile Include="Assets\Scripts\Sprite Scripts\SpritePackage.cs" />
+     <Compile Include="Assets\Scripts\Utility Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ControlsManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\MainCameraManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ManagerClass.cs" />

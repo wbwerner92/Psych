@@ -18,7 +18,8 @@ public class Skill
 	public SkillType skillType;
 	public Bod user;
 	public Vector2 targetPos;
-	public string userEffectSpritePath, targetEffectSpritePath;
+	public string userEffectSpritePath;
+	public string targetEffectSpritePath;
 
 	public int rangeMin, rangeMax;
 

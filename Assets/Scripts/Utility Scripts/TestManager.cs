@@ -30,6 +30,7 @@ public class TestManager : ManagerClass
 				(BattleManager.instance == null || BattleManager.instance.IsInitialized() == false) || 
 				(ControlsManager.instance == null || ControlsManager.instance.IsInitialized() == false) || 
 				(SpriteManager.instance == null || SpriteManager.instance.IsInitialized() == false) || 
+				(AudioManager.instance == null || AudioManager.instance.IsInitialized() == false) ||
 				(MainCameraManager.instance == null || MainCameraManager.instance.IsInitialized() == false))
 			yield return null;
 	}

@@ -83,63 +83,71 @@ public class SkillManager : ManagerClass
 			1,
 			delegate (Bod user, Bod target, Vector2 targetPos)
 			{
+				// Add action text for attack
 				BattleManager.instance.AddActionDisplayText(user.name + " strikes " + target.name);
-
+				
 				// Get Attack Power and Aim
 				int atkPower = user.str;
 				int atkAim = user.dex;
-
 				Debug.Log ("Attack Power: " + atkPower + ", Aim: " + atkAim);
+
+				// Declare audio string for audio effect
+				string audioStr = "";
 
 				// Get Dodge Rate
 				int dodgeVal = BodManager.instance.AgilRoll(target);
-
 				Debug.Log ((target.ap > 0) ? "Dodge: " + dodgeVal : target.name + " is too tired to dodge");
-
 				if (dodgeVal >= atkAim && target.ap > 0)
 				{
 					BattleManager.instance.AddActionDisplayText(target.name + " dodges!");
+					// TODO: Put in Audio Clip for dodge
 					target.ap --;
 				}
 				else
 				{
+					// Add action text for target being hit
 					BattleManager.instance.AddActionDisplayText("Hit!");
 
 					// Get Block/Dmg Absorption
 					int blockVal = BodManager.instance.FortRoll(target);
-
 					Debug.Log ((target.ap > 0) ? "Block/Absorb: " + blockVal : target.name + " is too tired to block");
-
 					if (blockVal > 0 && target.ap > 0)
 					{
 						// Adjust block val if its greater than the power 
 						if (blockVal > atkPower)
+						{
 							blockVal = atkPower;
-
+						}
+						// Add action text for absorbed/blocked damage
 						BattleManager.instance.AddActionDisplayText(target.name + " absorbs " + blockVal + " damage.");
-
 						atkPower -= blockVal;
 						target.ap --;
 					}
 
+					// Apply remaining power as damage
 					if (atkPower > 0)
 					{
 						BodManager.instance.TakeDamage(target, atkPower);
+						audioStr = "hit_sound";
 
 						// TODO: Knockback
 						int knockbackVal = blockVal * 2;
-						while (target.dead == false && atkPower > knockbackVal)
-						{
-							BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
-
-							BattleManager.instance.Knockback(targetPos);
-
-							atkPower -= knockbackVal;
-						}
+						Debug.Log("Knockback: " + knockbackVal);
+						// while (target.dead == false && atkPower > knockbackVal)
+						// {
+						// 	// Add action text for knockback effect
+						// 	BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
+						// 	BattleManager.instance.Knockback(targetPos);
+						// 	atkPower -= knockbackVal;
+						// }
 					}
 				}
 
-				 user.ap --;
+				// Adjust user action points
+				user.ap --;
+
+				// Play audio clip
+				AudioManager.instance.PlayAudioClip(audioStr);
 			},
 			delegate(Bod user)
 			{
