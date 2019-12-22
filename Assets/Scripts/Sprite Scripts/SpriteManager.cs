@@ -40,6 +40,8 @@ public class SpriteManager : ManagerClass
 	private Sprite[] bod_1_rise;
 	[SerializeField]
 	private Sprite[] bod_1_trance;
+	[SerializeField]
+	private Sprite[] bod_1_take_damage;
 	// Bod 2
 	[SerializeField]
 	private Sprite[] bod_2_stand;
@@ -94,6 +96,7 @@ public class SpriteManager : ManagerClass
 		arrayRefSprites.Add("bod_1_burst", bod_1_burst);
 		arrayRefSprites.Add("bod_1_rise", bod_1_rise);
 		arrayRefSprites.Add("bod_1_trance", bod_1_trance);
+		arrayRefSprites.Add("bod_1_take_damage", bod_1_take_damage);
 		arrayRefSprites.Add("bod_2_stand", bod_2_stand);
 		arrayRefSprites.Add("bod_2_burst", bod_2_burst);
 		arrayRefSprites.Add("bod_2_rise", bod_2_rise);

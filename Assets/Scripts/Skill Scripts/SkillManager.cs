@@ -42,27 +42,6 @@ public class SkillManager : ManagerClass
 		return newSkill;
 	}
 
-//	public bool CanUse(Skill skill, Vector2 pos1, Vector2 pos2)
-//	{
-//		if (skill.user != null && skill.usable.Invoke(skill.user, skill.target, pos1, pos2) == true)
-//			return true;
-//		else
-//			return false;
-//	}
-	
-//	public string GetSkillInfo(Skill skill)
-//	{
-//		string returnStr = "";
-//		
-//		returnStr += 
-//			"Skill Name: " + skill.name + "\n" +
-//				"User: " + ((skill.user == null) ? "NULL" : skill.user.name) + "\n" + 
-//				"Target: " + ((skill.target == null) ? "NULL" : skill.target.name) + "\n" +
-//				"Can Use: " + CanUse(skill);
-//		
-//		return returnStr;
-//	}
-
 	private void GenerateSkillDictionary()
 	{
 		skillDictionary = new Dictionary<string, Skill>();
@@ -86,6 +65,10 @@ public class SkillManager : ManagerClass
 				// Add action text for attack
 				BattleManager.instance.AddActionDisplayText(user.name + " strikes " + target.name);
 				
+				// Get Token Refs
+				BodToken userToken = BattleManager.instance.GetToken(user);
+				BodToken targetToken = BattleManager.instance.GetToken(target);
+
 				// Get Attack Power and Aim
 				int atkPower = user.str;
 				int atkAim = user.dex;
@@ -128,6 +111,7 @@ public class SkillManager : ManagerClass
 					if (atkPower > 0)
 					{
 						BodManager.instance.TakeDamage(target, atkPower);
+						targetToken.spritePackage.SetTakeDamage();
 						audioStr = "hit_sound";
 
 						// TODO: Knockback
@@ -140,6 +124,8 @@ public class SkillManager : ManagerClass
 						// 	BattleManager.instance.Knockback(targetPos);
 						// 	atkPower -= knockbackVal;
 						// }
+
+						targetToken.spritePackage.StartWaitToSetStanding();
 					}
 				}
 

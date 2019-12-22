@@ -206,6 +206,17 @@ public class BattleManager : ManagerClass
 				token.selectionArrow.SetActive(false);
 		}
 	}
+	public BodToken GetToken(Bod bod)
+	{
+		foreach (BodToken token in tokens)
+		{
+			if (token.bodRef == bod)
+			{
+				return token;
+			}
+		}
+		return null;
+	}
 
 	public void PerformMove(BodToken token, Vector2 pos)
 	{

@@ -27,7 +27,8 @@ public class SpritePackage : MonoBehaviour
 
 	public Sprite[] burstSprites;
 	public Sprite[] riseSprites;
-	public Sprite[] tranceSprties;
+	public Sprite[] tranceSprites;
+	public Sprite[] takeDamageSprites;
 
 	void Awake()
 	{
@@ -45,14 +46,15 @@ public class SpritePackage : MonoBehaviour
 				standingSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_stand");
 				burstSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_burst");
 				riseSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_rise");
-				tranceSprties = SpriteManager.instance.GetArrayRefSprite("bod_1_trance");
+				tranceSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_trance");
+				takeDamageSprites = SpriteManager.instance.GetArrayRefSprite("bod_1_take_damage");
 				break;
 			case "package_2":
 				// Debug.Log("Setting package 2 Sprites");
 				standingSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_stand");
 				burstSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_burst");
 				riseSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_rise");
-				tranceSprties = SpriteManager.instance.GetArrayRefSprite("bod_2_trance");
+				tranceSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_trance");
 				break;
 			default:
 				break;
@@ -93,6 +95,10 @@ public class SpritePackage : MonoBehaviour
 		ResetMobSpriteValues();
 		activeMobSprites = standingSprites;
 	}
+	public void StartWaitToSetStanding()
+	{
+		StartCoroutine(WaitToSetStanding());
+	}
 	public IEnumerator WaitToSetStanding()
 	{
 		yield return new WaitForSeconds(1.0f);
@@ -111,7 +117,12 @@ public class SpritePackage : MonoBehaviour
 	public void SetTrance()
 	{
 		ResetMobSpriteValues();
-		activeMobSprites = tranceSprties;
+		activeMobSprites = tranceSprites;
+	}
+	public void SetTakeDamage()
+	{
+		ResetMobSpriteValues();
+		activeMobSprites = takeDamageSprites;
 	}
 
 	public void ResetEffectSpriteValues()
