@@ -1,0 +1,6 @@
+{
+    "questLineId" : "[id]",
+    "questLineName" : "[name]",
+    "description" : "[description text]",
+    "questList" : []
+}

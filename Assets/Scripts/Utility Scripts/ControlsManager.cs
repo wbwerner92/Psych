@@ -52,7 +52,7 @@ public enum ControlsEvent
 	KEY_Z
 }
 
-public class ControlsManager : MonoBehaviour 
+public class ControlsManager : ManagerClass 
 {
 	public static ControlsManager instance;
 
@@ -70,12 +70,15 @@ public class ControlsManager : MonoBehaviour
 		}
 	}
 
-	// Use this for initialization
+	void Awake()
+	{
+		instance = this;
+	}
 	void Start () 
 	{
-		Debug.Log ("Starting Controls Manager");
-		instance = this;
+		// Debug.Log ("Starting Controls Manager");
 		readActiveInput = false;
+		Initialize();
 	}
 
 	public void ReadInput()

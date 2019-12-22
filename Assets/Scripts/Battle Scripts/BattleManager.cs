@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class BattleManager : MonoBehaviour 
+public class BattleManager : ManagerClass 
 {
 	// Battle Game Object references
 	public static BattleManager instance;
@@ -39,10 +39,13 @@ public class BattleManager : MonoBehaviour
 	private int[] turnSpeedIndex;
 	public bool isMoving;
 
+	void Awake()
+	{
+		instance = this;
+	}
 	void Start () 
 	{
-		Debug.Log ("Starting Battle Manager");
-		instance = this;
+		// Debug.Log ("Starting Battle Manager");
 		battleActive = false;
 		turnOrder = new List<BodToken>();
 
@@ -53,6 +56,8 @@ public class BattleManager : MonoBehaviour
 		UniversalValues.maxPosX = 350.0f;
 		UniversalValues.minPosY = -150.0f;
 		UniversalValues.maxPosY = 150.0f;
+
+		Initialize();
 	}
 
 	private void StartBattle()

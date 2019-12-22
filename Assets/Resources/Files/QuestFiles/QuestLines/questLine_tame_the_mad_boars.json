@@ -1,0 +1,10 @@
+{
+    "questLineId" : "tame_the_mad_boars",
+    "questLineName" : "Tame the Mad Boars",
+    "description" : "The Mad Boars have become a problem for the residents of Tent City. Dismantle their Club.",
+    "questList" : 
+    [
+        "take_out_the_trash",
+        "pig_report"
+    ]
+}

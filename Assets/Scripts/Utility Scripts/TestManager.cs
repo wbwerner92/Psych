@@ -1,33 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestManager : MonoBehaviour 
+public class TestManager : ManagerClass 
 {
 	public static TestManager instance;
 
-	// Use this for initialization
+	void Awake()
+	{
+		instance = this;
+	}
 	void Start () 
 	{
 		Debug.Log ("Starting Test Manager");
-		instance = this;
-
-		StartCoroutine(WaitToStartTest());
+		StartCoroutine(WaitToInitialize());
+	}
+	protected override IEnumerator WaitToInitialize()
+	{
+		yield return WaitToStartTest();
+		m_initialized = true;
+		Debug.Log("Instances Loaded");
+		StartTest();
 	}
 
 	public IEnumerator WaitToStartTest()
 	{
-		while (BodManager.instance == null || 
-				SkillManager.instance == null || 
-				BattleManager.instance == null || 
-				ControlsManager.instance == null || 
-				SpriteManager.instance == null || 
-				EffectsManager.instance == null ||
-				MainCameraManager.instance == null)
+		while ((BodManager.instance == null || BodManager.instance.IsInitialized() == false) || 
+				(QuestManager.instance == null || QuestManager.instance.IsInitialized() == false) ||
+				(SkillManager.instance == null || SkillManager.instance.IsInitialized() == false) || 
+				(BattleManager.instance == null || BattleManager.instance.IsInitialized() == false) || 
+				(ControlsManager.instance == null || ControlsManager.instance.IsInitialized() == false) || 
+				(SpriteManager.instance == null || SpriteManager.instance.IsInitialized() == false) || 
+				(MainCameraManager.instance == null || MainCameraManager.instance.IsInitialized() == false))
 			yield return null;
-
-		Debug.Log("Instances Loaded");
-
-		StartTest();
 	}
 	public void StartTest()
 	{

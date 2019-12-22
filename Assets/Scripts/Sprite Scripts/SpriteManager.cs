@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpriteManager : MonoBehaviour 
+public class SpriteManager : ManagerClass 
 {
 	public static SpriteManager instance;
 
@@ -65,10 +65,13 @@ public class SpriteManager : MonoBehaviour
 	void Awake()
 	{
 		instance = this;
+	}
+	void Start()
+	{
+		LoadSpriteResources();
 		Initialize();
 	}
-
-	private void Initialize()
+	private void LoadSpriteResources()
 	{
 		singleRefSprites = new Dictionary<string, Sprite>();
 		singleRefSprites.Add("stat_up_icon", stat_up_icon);

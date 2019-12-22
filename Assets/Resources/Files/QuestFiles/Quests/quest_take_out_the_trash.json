@@ -1,0 +1,14 @@
+{
+    "questId" : "take_out_the_trash",
+    "questName" : "Take out the Trash",
+    "location" : "[location Id]",
+    "questGiverId" : "Mayor Riggleby",
+    "description" : "Drunken members of the Mad Boars are being disruptive and harrassing the residents in Tent City. Beat them up to keep the peace.",
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    },
+    "blockedBy" : []
+}

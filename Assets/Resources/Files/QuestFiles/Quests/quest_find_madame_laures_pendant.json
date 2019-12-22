@@ -1,0 +1,14 @@
+{
+    "questId" : "find_madame_laures_pendant",
+    "questName" : "Find Madame Laure's Pendant",
+    "location" : "[location Id]",
+    "questGiverId" : "Madame Laure",
+    "description" : "Madame Laure's special pendant has gone missing. Be a dear and fetch it for her in the woods.",
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    },
+    "blockedBy" : []
+}

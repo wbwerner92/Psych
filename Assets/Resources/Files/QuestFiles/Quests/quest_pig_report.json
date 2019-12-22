@@ -1,0 +1,17 @@
+{
+    "questId" : "pig_report",
+    "questName" : "Pig Report",
+    "location" : "[location Id]",
+    "questGiverId" : "Mayor Riggleby",
+    "description" : "Mayor Riggleby is concerned about the frequent encounters with the Mad Boars. Be a friend and survey the surrounding areas and report back your findings.",
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    },
+    "blockedBy" : 
+    [
+        "take_out_the_trash"
+    ]
+}

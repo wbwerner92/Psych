@@ -1,0 +1,14 @@
+{
+    "questId" : "missing_kids",
+    "questName" : "Missing Kids",
+    "location" : "[location Id]",
+    "questGiverId" : "Mayor Riggleby",
+    "description" : "Some of the local kids haven't returned home from playing in the woods and their families are worried. Be a friend and find them.",
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    },
+    "blockedBy" : []
+}

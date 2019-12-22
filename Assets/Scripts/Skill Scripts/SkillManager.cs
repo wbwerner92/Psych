@@ -2,18 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SkillManager : MonoBehaviour 
+public class SkillManager : ManagerClass
 {
 	public static SkillManager instance;
 	public Dictionary<string, Skill> skillDictionary;
 
-	// Use this for initialization
+	void Awake()
+	{
+		instance = this;
+	}
 	void Start () 
 	{
-		Debug.Log("Starting Skill Manager");
-		instance = this;
-
+		// Debug.Log("Starting Skill Manager");
 		GenerateSkillDictionary();
+		Initialize();
 	}
 
 	public Skill GetSkill(string refName)

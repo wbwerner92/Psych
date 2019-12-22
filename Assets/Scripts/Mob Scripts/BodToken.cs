@@ -82,7 +82,7 @@ public class BodToken : MonoBehaviour
 				spritePackage.SetTrance();
 				break;
 			default:
-				Debug.LogError("Cannot set");
+				// Debug.LogError("Cannot set");
 				break;
 		}
 	}

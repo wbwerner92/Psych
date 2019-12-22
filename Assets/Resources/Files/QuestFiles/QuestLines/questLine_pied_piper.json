@@ -1,0 +1,10 @@
+{
+    "questLineId" : "pied_piper",
+    "questLineName" : "Pied Piper",
+    "description" : " Kids from Tent City keep vanishing. Find out what’s happening and stop it.",
+    "questList" : 
+    [
+        "missing_kids",
+        "stand_watch"
+    ]
+}

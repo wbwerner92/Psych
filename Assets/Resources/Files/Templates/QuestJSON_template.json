@@ -1,0 +1,14 @@
+{
+    "questId" : "[id]",
+    "questName" : "[name]",
+    "location" : "[location Id]",
+    "questGiverId" : "[quest giver]",
+    "description" : "[desciption text]",
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    },
+    "blockedBy" : ["[blocked quest list]"]
+}

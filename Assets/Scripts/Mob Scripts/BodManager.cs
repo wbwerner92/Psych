@@ -3,16 +3,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class BodManager : MonoBehaviour 
+public class BodManager : ManagerClass 
 {
 	public static BodManager instance;
 	public GameObject bodTokenPrefab;
 
-	// Use this for initialization
+	void Awake()
+	{
+		instance = this;
+	}
 	void Start () 
 	{
-		Debug.Log ("Starting Bod Manager");
-		instance = this;
+		// Debug.Log ("Starting Bod Manager");
+		Initialize();
 	}
 
 	public void GenerateNewPlayerCharacter(Bod bod)

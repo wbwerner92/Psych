@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Plugins\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\Battle Scripts\ActionMenu.cs" />
      <Compile Include="Assets\Scripts\Battle Scripts\ActionSkillButton.cs" />
      <Compile Include="Assets\Scripts\Battle Scripts\BattleBoard.cs" />
@@ -65,13 +66,14 @@
      <Compile Include="Assets\Scripts\Mob Scripts\BodMenu.cs" />
      <Compile Include="Assets\Scripts\Mob Scripts\BodToken.cs" />
      <Compile Include="Assets\Scripts\Mob Scripts\Mob.cs" />
+     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
      <Compile Include="Assets\Scripts\Skill Scripts\Skill.cs" />
      <Compile Include="Assets\Scripts\Skill Scripts\SkillManager.cs" />
      <Compile Include="Assets\Scripts\Sprite Scripts\SpriteManager.cs" />
      <Compile Include="Assets\Scripts\Sprite Scripts\SpritePackage.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ControlsManager.cs" />
-     <Compile Include="Assets\Scripts\Utility Scripts\EffectsManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\MainCameraManager.cs" />
+     <Compile Include="Assets\Scripts\Utility Scripts\ManagerClass.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\TestManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\UniversalValues.cs" />
      <None Include="Assets\Resources\Shaders\SpriteOutline.shader" />
