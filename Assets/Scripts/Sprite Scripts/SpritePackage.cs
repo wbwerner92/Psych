@@ -55,6 +55,7 @@ public class SpritePackage : MonoBehaviour
 				burstSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_burst");
 				riseSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_rise");
 				tranceSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_trance");
+				takeDamageSprites = SpriteManager.instance.GetArrayRefSprite("bod_2_take_damage");
 				break;
 			default:
 				break;
@@ -95,13 +96,13 @@ public class SpritePackage : MonoBehaviour
 		ResetMobSpriteValues();
 		activeMobSprites = standingSprites;
 	}
-	public void StartWaitToSetStanding()
+	public void StartWaitToSetStanding(float waitTime = 1.0f)
 	{
-		StartCoroutine(WaitToSetStanding());
+		StartCoroutine(WaitToSetStanding(waitTime));
 	}
-	public IEnumerator WaitToSetStanding()
+	public IEnumerator WaitToSetStanding(float waitTime = 1.0f)
 	{
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(waitTime);
 		SetStanding();
 	}
 	public void SetBurst()

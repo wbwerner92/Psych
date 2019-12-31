@@ -26,6 +26,7 @@ public class TestManager : ManagerClass
 	{
 		while ((BodManager.instance == null || BodManager.instance.IsInitialized() == false) || 
 				(QuestManager.instance == null || QuestManager.instance.IsInitialized() == false) ||
+				(ConversationManager.instance == null || ConversationManager.instance.IsInitialized() == false) ||
 				(SkillManager.instance == null || SkillManager.instance.IsInitialized() == false) || 
 				(BattleManager.instance == null || BattleManager.instance.IsInitialized() == false) || 
 				(ControlsManager.instance == null || ControlsManager.instance.IsInitialized() == false) || 

@@ -2,8 +2,19 @@
     "questId" : "[id]",
     "questName" : "[name]",
     "location" : "[location Id]",
-    "questGiverId" : "[quest giver]",
+    "questGiverId" : "[character Id]",
     "description" : "[desciption text]",
+    "questProgress" : 
+    {
+        "currentProgress" : "0",
+        "steps" : 
+        [
+            {
+                "complete" : "[completed bool val]",
+                "stepLocation" : "[region]|[zone]|[area]|[place]"
+            }
+        ]
+    },
     "rewards" :
     {
         "money" : "[money val]",

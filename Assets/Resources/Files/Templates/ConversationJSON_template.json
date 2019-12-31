@@ -1,0 +1,25 @@
+{
+    "conversationId" : "[conversation Id]",
+    "participantList" : ["character Id list"],
+    "conversationTree" : 
+    {
+        "defaultPrompt" : "[default prompt Id]",
+        "prompts" : 
+        [
+            {
+                "promptIndex" : "[prompt index/id]",
+                "speakerId" : "[speaker character Id]",
+                "promptText" : "[prompt text]",
+                "responseList" : ["[response index/id list]"]
+            }
+        ],
+        "responses" : 
+        [
+            {
+                "responseIndex" : "[response index/id]",
+                "responseText" : "[response text]",
+                "responseActionList" : ["[response action list]"]          
+            }
+        ]
+    }
+}

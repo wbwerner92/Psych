@@ -4,6 +4,58 @@
     "location" : "[location Id]",
     "questGiverId" : "Mayor Riggleby",
     "description" : "Some of the local kids haven't returned home from playing in the woods and their families are worried. Be a friend and find them.",
+    "questProgress" : 
+    {
+        "currentProgress" : "0",
+        "steps" : 
+        [
+            {
+                "complete" : "false",
+                "stepLocation" : "[Outskirts]|[Southern Woods]|[area]|[place]",
+                "action" : 
+                {
+                    "actionType" : "battle|[battle Id]",
+                    "postAction" : ""
+                }
+            },
+            {
+                "complete" : "false",
+                "stepLocation" : "[Outskirts]|[Southern Woods]|[area]|[place]",
+                "action" : 
+                {
+                    "actionType" : "talk|[conversation Id]",
+                    "postAction" : ""
+                }
+            },
+            {
+                "complete" : "false",
+                "stepLocation" : "[Outskirts]|[Southern Woods]|[area]|[place]",
+                "action" : 
+                {
+                    "actionType" : "",
+                    "postAction" : ""
+                }
+            },
+            {
+                "complete" : "false",
+                "stepLocation" : "[Outskirts]|[Southern Woods]|[area]|[place]",
+                "action" : 
+                {
+                    "actionType" : "",
+                    "postAction" : ""
+                }
+            },
+            {
+                "complete" : "false",
+                "stepLocation" : "[Outskirts]|[Southern Woods]|[area]|[place]",
+                "action" : 
+                {
+                    "actionType" : "",
+                    "postAction" : ""
+                }
+            }
+        ]
+    },
     "rewards" :
     {
         "money" : "[money val]",

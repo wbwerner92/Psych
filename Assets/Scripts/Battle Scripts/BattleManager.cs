@@ -243,7 +243,20 @@ public class BattleManager : ManagerClass
 		BodToken token = battleBoard.tokenPositions[(int)targetPos.x, (int)targetPos.y];
 		Vector2 knockbackPos = Vector2.zero;
 
-		if (diffX > diffY || (diffX == diffY && Random.Range(0, 2) == 0))
+		// Resolve equal diffs
+		if (diffX == diffY)
+		{
+			if (Random.Range(0, 2) == 0)
+			{
+				diffX ++;
+			}
+			else
+			{
+				diffY ++;
+			}
+		}
+
+		if (diffX > diffY)
 		{
 			// Horizontal move
 			if (activeToken.posX > (int)targetPos.x)

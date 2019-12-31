@@ -10,6 +10,10 @@ public class AudioManager : ManagerClass
 
     private Dictionary<string, AudioClip> m_audioDict;
     public AudioClip hit_sound;
+    public AudioClip miss_sound;
+    public AudioClip psy_laser_sound;
+    public AudioClip power_up_sound;
+    public AudioClip psy_wave_sound;
 
     void Awake()
     {
@@ -25,6 +29,10 @@ public class AudioManager : ManagerClass
     {
         m_audioDict = new Dictionary<string, AudioClip>();
         m_audioDict.Add("hit_sound", hit_sound);
+        m_audioDict.Add("miss_sound", miss_sound);
+        m_audioDict.Add("psy_laser_sound", psy_laser_sound);
+        m_audioDict.Add("psy_wave_sound", psy_wave_sound);
+        m_audioDict.Add("power_up_sound", power_up_sound);
     }
 
     public AudioClip GetAudioClip(string clipName)

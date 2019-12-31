@@ -83,7 +83,7 @@ public class SkillManager : ManagerClass
 				if (dodgeVal >= atkAim && target.ap > 0)
 				{
 					BattleManager.instance.AddActionDisplayText(target.name + " dodges!");
-					// TODO: Put in Audio Clip for dodge
+					audioStr = "miss_sound";
 					target.ap --;
 				}
 				else
@@ -186,12 +186,18 @@ public class SkillManager : ManagerClass
 			{
 				Debug.Log ("Psy Bolt Action");
 
+				// Get Token Refs
+				BodToken userToken = BattleManager.instance.GetToken(user);
+				BodToken targetToken = BattleManager.instance.GetToken(target);
+
 				BattleManager.instance.AddActionDisplayText(user.name + " fires a Psy Bolt at " + target.name + "!");
 
 				int pow = user.burst;
 				int resist = (target.stress < BodManager.instance.GetBodMind(target)) ? BodManager.instance.MindRoll(target) : 0;
 				if (resist > pow)
+				{
 					resist = pow;
+				}
 
 				Debug.Log ("Power: " + pow + ", Resist: " + resist);
 
@@ -203,21 +209,20 @@ public class SkillManager : ManagerClass
 
 					// TODO: Target Sprite = Resist Damage
 				}
-				else
-				{
-					// TODO: Target Sprite = Take Damage
-				}
 				
 				if (pow > 0)
 				{
 					BodManager.instance.TakeDamage(target, pow);
+					targetToken.spritePackage.SetTakeDamage();
+					targetToken.spritePackage.StartWaitToSetStanding();
 				}
 
+				AudioManager.instance.PlayAudioClip("psy_laser_sound");
 				user.stress ++;
 			},
 			delegate(Bod user)
 			{
-//				Debug.Log ("Psy Bolt Requirements");
+				// Debug.Log ("Psy Bolt Requirements");
 				if (user.burst > 0)
 					return true;
 				else
@@ -253,6 +258,78 @@ public class SkillManager : ManagerClass
 		skillDictionary.Add(skillId, newSkill);
 
 		// Telekenetic Push: Shift a target's position away from self
+		skillId = "psy_push";
+		newSkill = new Skill
+		(
+			skillId,
+			"Psy Push",
+			"",
+			"",
+			SkillType.Burst,
+			1,
+			1,
+			delegate(Bod user, Bod target, Vector2 targetPos)
+			{
+				Debug.Log ("Psy Push Action");
+
+				// Get Token Refs
+				BodToken userToken = BattleManager.instance.GetToken(user);
+				BodToken targetToken = BattleManager.instance.GetToken(target);
+
+				BattleManager.instance.AddActionDisplayText(user.name + " telekinetically pushes " + target.name + "!");
+
+				int pow = user.burst;
+				int resist = (target.stress < BodManager.instance.GetBodMind(target)) ? BodManager.instance.MindRoll(target) : 0;
+				if (resist > pow)
+				{
+					resist = pow;
+				}
+				Debug.Log ("Power: " + pow + ", Resist: " + resist);
+				if (resist > 0)
+				{
+					BattleManager.instance.AddActionDisplayText(target.name + " resists " + resist + " effect");
+					pow -= resist;
+					target.stress ++;
+
+					// TODO: Target Sprite = Resist Damage
+				}
+				if (pow > 0)
+				{
+					BattleManager.instance.AddActionDisplayText(target.name + " is pushed back");
+					targetToken.spritePackage.SetTakeDamage();
+					BattleManager.instance.Knockback(targetPos);
+
+					// while (target.dead == false && atkPower > knockbackVal)
+					// {
+					// 	// Add action text for knockback effect
+					// 	BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
+					// 	BattleManager.instance.Knockback(targetPos);
+					// 	atkPower -= knockbackVal;
+					// }
+					
+					
+					targetToken.spritePackage.StartWaitToSetStanding();
+				}
+
+				// TODO: Push Sound Effect
+				// AudioManager.instance.PlayAudioClip("psy_laser_sound");
+				user.stress ++;
+			},
+			delegate(Bod user)
+			{
+				// Debug.Log ("Psy Bolt Requirements");
+				if (user.burst > 0)
+					return true;
+				else
+					return false;
+			},
+			delegate(Bod user, Bod target, Vector2 pos1, Vector2 pos2)
+			{
+				return true;
+			}
+		);
+		skillDictionary.Add(skillId, newSkill);
+
 		// Telekenetic Pull: Shift a target's position toward self
 		// Barrier: Erect a barrier that cannot be passed through by person or attack
 
@@ -268,44 +345,49 @@ public class SkillManager : ManagerClass
 			SkillType.Rise,
 			0,
 			0,
-			delegate(Bod user, Bod target, Vector2 targetPos) {
+			delegate(Bod user, Bod target, Vector2 targetPos) 
+			{
+				Debug.Log ("Raise Str Action");
 
-			Debug.Log ("Raise Str Action");
-			
-			int pow = user.rise;
+				// Get Token Refs
+				BodToken userToken = BattleManager.instance.GetToken(user);
+				BodToken targetToken = BattleManager.instance.GetToken(target);
+				
+				int pow = user.rise;
 
-			BattleManager.instance.AddActionDisplayText(user.name + " raises str by : " + pow);
+				BattleManager.instance.AddActionDisplayText(user.name + " raises str by : " + pow);
+				AudioManager.instance.PlayAudioClip("power_up_sound");
 
-			user.str += pow;
-			user.stress ++;
-		},
-			delegate(Bod user) {
+				user.str += pow;
+				user.stress ++;
+			},
+			delegate(Bod user) 
+			{
+	//			Debug.Log ("Raise Str Requirements");
+				if (user.rise > 0)
+					return true;
+				else 
+					return false;
+			},
+			delegate(Bod user, Bod target, Vector2 pos1, Vector2 pos2) 
+			{
+				Debug.Log ("Raise Str Usable Check: " + user.stress + "/" + BodManager.instance.GetBodMind(user));
 
-//			Debug.Log ("Raise Str Requirements");
-			if (user.rise > 0)
+				if (user == null)
+				{
+					Debug.Log ("Invalid user/target");
+					return false;				
+				}
+				else if (user.stress >= BodManager.instance.GetBodMind(user))
+				{
+					Debug.Log (user.name + " is too stressed to use power");
+					return false;
+				}
+				
+				Debug.Log ("User: " + user.name + " Strength");
 				return true;
-			else 
-				return false;
-		},
-			delegate(Bod user, Bod target, Vector2 pos1, Vector2 pos2) {
-
-			Debug.Log ("Raise Str Usable Check: " + user.stress + "/" + BodManager.instance.GetBodMind(user));
-
-			if (user == null)
-			{
-				Debug.Log ("Invalid user/target");
-				return false;				
 			}
-			else if (user.stress >= BodManager.instance.GetBodMind(user))
-			{
-				Debug.Log (user.name + " is too stressed to use power");
-				return false;
-			}
-			
-			Debug.Log ("User: " + user.name + " can use Scan on " + target.name);
-			return true;
-
-		});
+		);
 		skillDictionary.Add(skillId, newSkill);
 
 		// Fortify - Raise Endurance: Psychically raise endurance stat

@@ -1,0 +1,104 @@
+{
+    "conversationId" : "missing_kids_1",
+    "participantList" : 
+    [
+        "mayor_riggleby"
+    ],
+    "conversationTree" : 
+    {
+        "defaultPrompt" : "p1",
+        "prompts" : 
+        [
+            {
+                "promptIndex" : "p1",
+                "speakerId" : "mayor_riggleby",
+                "promptText" : "Hello there friend. Might I request your help with a sensitve matter?",
+                "responseList" : 
+                [
+                    "r1.1",
+                    "r1.2",
+                    "r1.3",
+                    "r1.4"
+                ]
+            },
+            {
+                "promptIndex" : "p2",
+                "speakerId" : "mayor_riggleby",
+                "promptText" : "Well, we residents of Tent City are experiecing something of a growing crisis. Some of the children of our community have been running off to play which is normal. However, a number of them are failing to return. Many parents and residents are understandably worried. I'm sure the children are simply playing some elaborate game in the woods but it doesn't hurt to be cautious. Would you be able to search around for them and return them home? We would be very grateful to you for your help.",
+                "responseList" : 
+                [
+                    "r2.1",
+                    "r2.2",
+                    "r2.3"
+                ]
+            }
+        ],
+        "responses" : 
+        [
+            {
+                "responseIndex" : "r1.1",
+                "responseText" : "Of course, what seems to be the problem?",
+                "responseActionList" :
+                [
+                    "modifyRelationship|[tent city group id]|1",
+                    "prompt|p2"
+                ]
+            },
+            {
+                "responseIndex" : "r1.2",
+                "responseText" : "Depends on what it is.",
+                "responseActionList" :
+                [
+                    "prompt|p2"
+                ]
+            },
+            {
+                "responseIndex" : "r1.3",
+                "responseText" : "I'm not your friend but I'll hear you out.",
+                "responseActionList" :
+                [
+                    "modifyRelationship|[tent city group id]|-1",
+                    "prompt|p2"
+                ]
+            },
+            {
+                "responseIndex" : "r1.4",
+                "responseText" : "I'm busy right now.",
+                "responseActionList" :
+                [
+                    "endConversation"
+                ]
+            },
+            {
+                "responseIndex" : "r2.1",
+                "responseText" : "Consider it done.",
+                "responseActionList" :
+                [
+                    "modifyRelationship|[tent city group id]|1",
+                    "startQuest|missing_kids",
+                    "endConversation"
+                ]
+            },
+            {
+                "responseIndex" : "r2.2",
+                "responseText" : "I'll get it done for a price.",
+                "responseActionList" :
+                [
+                    "modifyQuestReward|missing_kids|money:[modifier val]",
+                    "startQuest|missing_kids",
+                    "endConversation"
+                ]
+            },
+            {
+                "responseIndex" : "r2.3",
+                "responseText" : "This isn't worth my time.",
+                "responseActionList" :
+                [
+                    "modifyRelationship|[tent city group id]|-1",
+                    "disableQuest|missing_kids",
+                    "endConversation"
+                ]
+            }
+        ]
+    }
+}
