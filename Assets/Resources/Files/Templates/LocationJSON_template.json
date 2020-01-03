@@ -1,5 +1,6 @@
 {
     "locationId" : "[locationId]",
+    "locationName" : "[Location Name]",
     "region" : "[region]",
     "zone" : "[zone]",
     "area" : "[area]",
@@ -9,5 +10,5 @@
         "posY" : "[posY]"
     },
     "places" : ["[place list]"],
-    "owner" : ["[location owner (club)]"]
+    "owner" : ["[location owner (group/club)]"]
 }

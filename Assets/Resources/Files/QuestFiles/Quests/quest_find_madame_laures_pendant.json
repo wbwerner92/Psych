@@ -4,6 +4,34 @@
     "location" : "[location Id]",
     "questGiverId" : "Madame Laure",
     "description" : "Madame Laure's special pendant has gone missing. Be a dear and fetch it for her in the woods.",
+    "questProgress" : 
+    {
+        "currentProgress" : "0",
+        "completion" : "2",
+        "steps" : 
+        [
+            {
+                "complete" : "false",
+                "availableAt" : "0",
+                "stepLocation" : "Outskirts|Southern Woods|[area]|[place]",
+                "stepAction" : "battle|[battle Id]",
+                "postStepActions" : 
+                [
+                    "modifyQuestProgress|1"
+                ]
+            },
+            {
+                "complete" : "false",
+                "availableAt" : "1",
+                "stepLocation" : "Outskirts|Southern Woods|[area]|[place]",
+                "stepAction" : "talk|[conversation Id]",
+                "postStepActions" : 
+                [
+                    "modifyQuestProgress|1"
+                ]
+            }
+        ]
+    },
     "rewards" :
     {
         "money" : "[money val]",

@@ -112,6 +112,12 @@ public class ConversationManager : ManagerClass
 {
     public static ConversationManager instance;
 
+    // Unity Object References
+    public GameObject ConversationDisplayPrefab;
+    private ConversationDisplay m_activeConversationDisplay;
+    public Transform uiParentTransform;
+
+    // Conversation Variables
     private string conversationFilePath = "Files/ConversationFiles";
     private Dictionary<string, ConversationJSON> conversationFilesById;
 
@@ -142,5 +148,30 @@ public class ConversationManager : ManagerClass
             }
         }
         Debug.Log("Loaded: " + conversationFilesById.Keys.Count + " Conversations");
+    }
+
+    /// <summary>
+    /// Return a conversation file given the Conversation Id String
+    /// </summary>
+    /// <param name="convoId">Conversation Id String</param>
+    public ConversationJSON GetConversationById(string convoId)
+    {
+        if (conversationFilesById == null || conversationFilesById.ContainsKey(convoId) == false)
+        {
+            Debug.LogError("Cannot Retrieve Conversation with Id: " + convoId);
+            return null;
+        }
+
+        return conversationFilesById[convoId];
+    }
+
+    public void StartConversation(string convoId)
+    {
+        if (m_activeConversationDisplay == null)
+        {
+            m_activeConversationDisplay = Instantiate(ConversationDisplayPrefab, uiParentTransform).GetComponent<ConversationDisplay>();
+        }
+
+        m_activeConversationDisplay.LoadConversationById(convoId);
     }
 }

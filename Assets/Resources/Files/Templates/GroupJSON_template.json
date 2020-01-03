@@ -1,0 +1,9 @@
+{
+    "groupId" : "[Group Id]",
+    "groupType" : "[Group Type: Club, Settlement, Player Group, Team, Other]",
+    "groupName" : "[Group Name]",
+    "leader" : "[Leader Character Id]",
+    "members" : ["[Member Id List]"],
+    "Territory" : ["[Owned Location Id List]"],
+    "Reputation" : "[Reputation Value]"
+}

@@ -1,0 +1,22 @@
+{
+    "battleId" : "[Battle Id]",
+    "battleTeam" : 
+    [
+        {
+            "name" : "[Battler Name]",
+            "str" : "[Strength Val]",
+            "end" : "[Endurance Val]",
+            "dex" : "[Dexterity Val]",
+            "spd" : "[Speed Val]",
+            "skills" : ["[Skill Id List]"],
+            "behavior" : "[Behavior Type: Aggressive, Defensive, Supportive, Balanced]",
+            "spritePackage" : "[Sprite Package Id]"
+        }
+    ],
+    "rewards" :
+    {
+        "money" : "[money val]",
+        "exp" : "[exp val]",
+        "items" : ["[item list]"]
+    }
+}

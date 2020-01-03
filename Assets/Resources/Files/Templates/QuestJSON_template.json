@@ -6,12 +6,16 @@
     "description" : "[desciption text]",
     "questProgress" : 
     {
-        "currentProgress" : "0",
+        "currentProgress" : "[progress int value]",
+        "completion" : "[completion int value]",
         "steps" : 
         [
             {
                 "complete" : "[completed bool val]",
-                "stepLocation" : "[region]|[zone]|[area]|[place]"
+                "availableAt" : "[progress available at]",
+                "stepLocation" : "[region]|[zone]|[area]|[place]",
+                "stepAction" : "[action]",
+                "postStepActions" : ["[post step action list]"]
             }
         ]
     },

@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Sprite Scripts\SpritePackage.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ControlsManager.cs" />
+     <Compile Include="Assets\Scripts\Utility Scripts\ConversationDisplay.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ConversationManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\MainCameraManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ManagerClass.cs" />

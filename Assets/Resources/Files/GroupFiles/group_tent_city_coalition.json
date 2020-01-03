@@ -1,0 +1,15 @@
+{
+    "groupId" : "tent_city_coalition",
+    "groupType" : "Settelment",
+    "groupName" : "Tent City Coalition",
+    "leader" : "mayor_riggleby",
+    "members" : 
+    [
+        "mayor_riggleby"
+    ],
+    "Territory" : 
+    [
+        "tent_city"
+    ],
+    "Reputation" : "Neutral"
+}

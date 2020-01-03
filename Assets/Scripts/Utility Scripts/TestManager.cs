@@ -5,6 +5,9 @@ public class TestManager : ManagerClass
 {
 	public static TestManager instance;
 
+	public bool runBattleTest;
+	public bool runConversationTest;
+
 	void Awake()
 	{
 		instance = this;
@@ -36,6 +39,17 @@ public class TestManager : ManagerClass
 			yield return null;
 	}
 	public void StartTest()
+	{
+		if (runBattleTest)
+		{
+			StartBattleTest();
+		}
+		else if (runConversationTest)
+		{
+			StartConversationTest();
+		}
+	}
+	private void StartBattleTest()
 	{
 		Bod bod1 = new Bod();
 		// Debug.Log ("Generated Bod: \n" + BodManager.instance.GetStats(bod1));
@@ -70,4 +84,10 @@ public class TestManager : ManagerClass
 		BattleManager.instance.Start1v1Battle(team1, team2);
 	}
 	
+	private void StartConversationTest()
+	{
+		Debug.Log("Start Conversation Test");
+		
+		ConversationManager.instance.StartConversation("missing_kids_1");
+	}
 }
