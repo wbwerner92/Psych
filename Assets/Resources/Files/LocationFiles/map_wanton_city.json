@@ -1,0 +1,1074 @@
+{
+    "mapId" : "wanton_city",
+    "mapName" : "Wanton City",
+    "regions" : 
+    [
+        {
+            "regionId" : "outskirts",
+            "regionName" : "Outskirts",
+            "zones" : 
+            [
+                {
+                    "zoneId" : "southern_woods",
+                    "zoneName" : "Southern Woods",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "mystic_park",
+                            "locationName" : "Mystic Park",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "1"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "madame_laures_table",
+                                    "placeName" : "Madame Laure's Table"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "tent_city",
+                            "locationName" : "Tent City",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "2"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "mayoral_hut",
+                                    "placeName" : "Mayoral Hut"
+                                }
+                            ],
+                            "owner" : "tent_city_coalition"
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "shady_glen",
+                    "zoneName" : "Shady Glen",
+                    "locations" : 
+                    [
+                        
+                    ]
+                },
+                {
+                    "zoneId" : "chamberlain_bluffs",
+                    "zoneName" : "Chamberlain Bluffs",
+                    "locations" : 
+                    [
+                        
+                    ]
+                },
+                {
+                    "zoneId" : "plains",
+                    "zoneName" : "Plains",
+                    "locations" : 
+                    [
+                        
+                    ]
+                },
+                {
+                    "zoneId" : "easter_coast",
+                    "zoneName" : "Easter Coast",
+                    "locations" : 
+                    [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "regionId" : "outer_city",
+            "regionName" : "Outer City",
+            "zones" : 
+            [
+                {
+                    "zoneId" : "commercial_district",
+                    "zoneName" : "Commercial District",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "commercial_southwest",
+                            "locationName" : "Commercial Southwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "4"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_south",
+                            "locationName" : "Commercial South",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "4"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_southeast",
+                            "locationName" : "Commercial Southeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "4"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_west",
+                            "locationName" : "Commercial West",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "southern_square",
+                            "locationName" : "Southern Square",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "south_station",
+                                    "placeName" : "South Station"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_east",
+                            "locationName" : "Commercial East",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_northwest",
+                            "locationName" : "Commercial Northwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_north",
+                            "locationName" : "Commercial North",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "stadium",
+                                    "placeName" : "Stadium"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "commercial_northeast",
+                            "locationName" : "Commercial Northeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "theater_district",
+                    "zoneName" : "Theater District",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "theater_southwest",
+                            "locationName" : "Theater Southwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "2",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_south",
+                            "locationName" : "theater_south",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_southeast",
+                            "locationName" : "Theater Southeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_west",
+                            "locationName" : "Theater West",
+                            "coordinates" : 
+                            {
+                                "posX" : "2",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "symphony_hall",
+                                    "placeName" : "Symphony Hall"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "western_square",
+                            "locationName" : "Western Square",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "west_station",
+                                    "placeName" : "West Station"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_east",
+                            "locationName" : "Theater East",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_northwest",
+                            "locationName" : "Theater Northwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "2",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_north",
+                            "locationName" : "Theater North",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "ascendant_theatre",
+                                    "placeName" : "Ascendant Theatre"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "theater_northeast",
+                            "locationName" : "Theater Northeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "historic_district",
+                    "zoneName" : "Historic District",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "historic_southwest",
+                            "locationName" : "Historic Southwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_south",
+                            "locationName" : "Historic South",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_southeast",
+                            "locationName" : "Historic Southeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "10",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_west",
+                            "locationName" : "Historic West",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "eastern_square",
+                            "locationName" : "Eastern Square",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "east_station",
+                                    "placeName" : "East Station"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_east",
+                            "locationName" : "Historic East",
+                            "coordinates" : 
+                            {
+                                "posX" : "10",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "great_library",
+                                    "placeName" : "Great Library"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_northwest",
+                            "locationName" : "Historic Northwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_north",
+                            "locationName" : "Historic North",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "holy_temple",
+                                    "placeName" : "Holy Temple"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "historic_northeast",
+                            "locationName" : "Historic Northeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "10",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "financial_district",
+                    "zoneName" : "Financial District",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "financial_southwest",
+                            "locationName" : "Financial Southwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_south",
+                            "locationName" : "Financial South",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_southeast",
+                            "locationName" : "Financial Southeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_west",
+                            "locationName" : "Financial West",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "northern_square",
+                            "locationName" : "Northern Square",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "north_station",
+                                    "placeName" : "North Station"
+                                }
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_east",
+                            "locationName" : "Financial East",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_northwest",
+                            "locationName" : "Financial Northwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "12"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_north",
+                            "locationName" : "Financial North",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "12"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "financial_northeast",
+                            "locationName" : "Financial Northeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "12"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "residential_southwest",
+                    "zoneName" : "Residential Southwest",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "residential_southwest_park",
+                            "locationName" : "Res SW Park",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southwest_lot_1",
+                            "locationName" : "Res SW Lot 1",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southwest_lot_2",
+                            "locationName" : "Res SW Lot 2",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southwest_lot_3",
+                            "locationName" : "Res SW Lot 3",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+    
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "residential_southeast",
+                    "zoneName" : "Residential Southeast",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "residential_southeast_lot_1",
+                            "locationName" : "Res SE Lot 1",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southeast_park",
+                            "locationName" : "Res SE Park",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "5"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southeast_lot_2",
+                            "locationName" : "Res SE Lot 2",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_southeast_lot_3",
+                            "locationName" : "Res SE Lot 3",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "6"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                },
+                {
+                    "zoneId" : "residential_northwest",
+                    "zoneName" : "Residential Northwest",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "residential_northwest_lot_1",
+                            "locationName" : "Res NW Lot 1",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northwest_lot_2",
+                            "locationName" : "Res NW Lot 2",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northwest_park",
+                            "locationName" : "Res NW Park",
+                            "coordinates" : 
+                            {
+                                "posX" : "3",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northwest_lot_3",
+                            "locationName" : "Res NW Lot 3",
+                            "coordinates" : 
+                            {
+                                "posX" : "4",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        } 
+                    ]
+                },
+                {
+                    "zoneId" : "residential_northeast",
+                    "zoneName" : "Residential Northeast",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "residential_northeast_lot_1",
+                            "locationName" : "Res NE Lot 1",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northeast_lot_2",
+                            "locationName" : "Res NE Lot 2",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "10"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northeast_lot_3",
+                            "locationName" : "Res NE Lot 3",
+                            "coordinates" : 
+                            {
+                                "posX" : "8",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        },
+                        {
+                            "locationId" : "residential_northeast_park",
+                            "locationName" : "Res NE Park",
+                            "coordinates" : 
+                            {
+                                "posX" : "9",
+                                "posY" : "11"
+                            },
+                            "places" : 
+                            [
+                        
+                            ],
+                            "owner" : ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "regionId" : "inner_city",
+            "regionName" : "Inner City",
+            "zones" : 
+            [
+                {
+                    "zoneId" : "downtown",
+                    "zoneName" : "Downtown",
+                    "locations" : 
+                    [
+                        {
+                            "locationId" : "downtown_southwest",
+                            "locationName" : "Downtown Southwest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_south",
+                            "locationName" : "Downtown South",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_southeast",
+                            "locationName" : "Downtown Southeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "7"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_west",
+                            "locationName" : "Downtown West",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "central_square",
+                            "locationName" : "Central Square",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "nexus_station",
+                                    "placeName" : "Nexus Station"
+                                }
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_east",
+                            "locationName" : "Downtown East",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "8"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_northwest",
+                            "locationName" : "Downtown NorthWest",
+                            "coordinates" : 
+                            {
+                                "posX" : "5",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_north",
+                            "locationName" : "Downtown North",
+                            "coordinates" : 
+                            {
+                                "posX" : "6",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+                                {
+                                    "placeId" : "atlas_clocktower",
+                                    "placeName" : "Atlas Clocktower"
+                                }
+                            ],
+                            "owner" : "golden_empire"
+                        },
+                        {
+                            "locationId" : "downtown_northeast",
+                            "locationName" : "Downtown Northeast",
+                            "coordinates" : 
+                            {
+                                "posX" : "7",
+                                "posY" : "9"
+                            },
+                            "places" : 
+                            [
+
+                            ],
+                            "owner" : "golden_empire"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "regionId" : "under_city",
+            "regionName" : "Under City",
+            "zones" : 
+            [
+                {
+                    "zoneId" : "warren",
+                    "zoneName" : "Warren",
+                    "locations" : 
+                    [
+                        
+                    ]
+                },
+                {
+                    "zoneId" : "pit",
+                    "zoneName" : "Pit",
+                    "locations" : 
+                    [
+                        
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -59,6 +59,33 @@ public class ConversationTreeJSON
 
         return treeJSON;
     }
+
+    public ConversationPromptJSON GetDefaultPrompt()
+    {
+        return GetPrompt(defaultPrompt);
+    }
+    public ConversationPromptJSON GetPrompt(string promptId)
+    {
+        foreach (ConversationPromptJSON prompt in prompts)
+        {
+            if (prompt.promptIndex == promptId)
+            {
+                return prompt;
+            }
+        }
+        return null;
+    }
+    public ConversationResponseJSON GetResponse(string responseId)
+    {
+        foreach (ConversationResponseJSON response in responses)
+        {
+            if (response.responseIndex == responseId)
+            {
+                return response;
+            }
+        }
+        return null;
+    }
 }
 public class ConversationPromptJSON
 {
@@ -172,6 +199,7 @@ public class ConversationManager : ManagerClass
             m_activeConversationDisplay = Instantiate(ConversationDisplayPrefab, uiParentTransform).GetComponent<ConversationDisplay>();
         }
 
-        m_activeConversationDisplay.LoadConversationById(convoId);
+        m_activeConversationDisplay.LoadConversationFile(GetConversationById(convoId));
+        m_activeConversationDisplay.StartConversation();
     }
 }
