@@ -17,6 +17,7 @@ public class ConversationDisplay : MonoBehaviour
     private float m_deltaTime;
     private float m_frameTime = 0.05f;
     private float m_frame;
+    private char m_pendingChar = '>';
 
     public void LoadConversationById(string convoId)
     {
@@ -62,6 +63,11 @@ public class ConversationDisplay : MonoBehaviour
         Debug.Log("Got conversation prompt: " + m_currentPrompt.promptIndex);
     }
 
+    public void UI_InputAreaClick()
+    {
+        Debug.Log("Input Area Click Event");
+    }
+
     void Update()
     {
         if (m_currentConversation != null && m_currentPrompt != null)
@@ -69,28 +75,34 @@ public class ConversationDisplay : MonoBehaviour
             string fullText = m_currentPrompt.promptText;
             string currentText = textDisplay.text;
 
+            // Keep track of the time that has passed
+            m_deltaTime += Time.deltaTime;
+            
+            while (m_deltaTime >= m_frameTime) 
+            {
+                // Track time progression and increase frame count
+                m_deltaTime -= m_frameTime;
+                m_frame++;
+
+                if (m_frame >= fullText.Length)
+                {
+                    // Reached the end of the text line
+                    // Debug.Log("Reached the end of the Text");
+                }	
+            }
             // Determine if text is needed to be added to the display
             if (currentText.Length < fullText.Length)
             {
-                // Keep track of the time that has passed
-                m_deltaTime += Time.deltaTime;
-                
-                while (m_deltaTime >= m_frameTime) 
-                {
-                    // Track time progression and increase frame count
-                    m_deltaTime -= m_frameTime;
-                    m_frame++;
-
-                    if (m_frame >= fullText.Length)
-                    {
-                        // Reached the end of the text line
-                        Debug.Log("Reached the end of the Text");
-                    }	
-                }
                 // Add the next character to the text string
                 char nextChar = fullText.ToCharArray()[currentText.Length];
                 Debug.Log("Adding character: " + nextChar);
                 textDisplay.text = currentText + nextChar;
+            }
+            else if (currentText.Length == fullText.Length)
+            {
+                // Handle Pending Char
+                Debug.Log("Show Pending character");
+                textDisplay.text = fullText + " " + m_pendingChar; 
             }
         }
     }

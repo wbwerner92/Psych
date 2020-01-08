@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\Battle Scripts\BattleBoard.cs" />
      <Compile Include="Assets\Scripts\Battle Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\Battle Scripts\BattleTeam.cs" />
+     <Compile Include="Assets\Scripts\Conversation Scripts\ConversationDisplay.cs" />
+     <Compile Include="Assets\Scripts\Conversation Scripts\ConversationManager.cs" />
      <Compile Include="Assets\Scripts\Mob Scripts\Bod.cs" />
      <Compile Include="Assets\Scripts\Mob Scripts\BodManager.cs" />
      <Compile Include="Assets\Scripts\Mob Scripts\BodMenu.cs" />
@@ -73,8 +75,6 @@
      <Compile Include="Assets\Scripts\Sprite Scripts\SpritePackage.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ControlsManager.cs" />
-     <Compile Include="Assets\Scripts\Utility Scripts\ConversationDisplay.cs" />
-     <Compile Include="Assets\Scripts\Utility Scripts\ConversationManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\MainCameraManager.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\ManagerClass.cs" />
      <Compile Include="Assets\Scripts\Utility Scripts\TestManager.cs" />
