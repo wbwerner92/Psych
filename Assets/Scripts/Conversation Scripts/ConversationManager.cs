@@ -86,6 +86,10 @@ public class ConversationTreeJSON
         }
         return null;
     }
+    public List<ConversationResponseJSON> GetResponses()
+    {
+        return responses;
+    }
 }
 public class ConversationPromptJSON
 {

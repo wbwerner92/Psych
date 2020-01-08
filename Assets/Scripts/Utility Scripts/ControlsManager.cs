@@ -4,6 +4,7 @@ using System.Collections;
 public enum ControlsEvent
 {
 	NONE,
+	RETURN,
 	ARROW_LEFT,
 	ARROW_UP,
 	ARROW_DOWN,
@@ -99,6 +100,8 @@ public class ControlsManager : ManagerClass
 			currentEvent = ControlsEvent.ARROW_UP;
 		else if (Input.GetKey(KeyCode.DownArrow))
 			currentEvent = ControlsEvent.ARROW_DOWN;
+		else if (Input.GetKey(KeyCode.Return))
+			currentEvent = ControlsEvent.RETURN;
 		else if (Input.GetKey(KeyCode.Equals))
 			currentEvent = ControlsEvent.KEY_PLUS;
 		else if (Input.GetKey(KeyCode.Minus))
