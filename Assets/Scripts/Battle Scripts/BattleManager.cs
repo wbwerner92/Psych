@@ -237,8 +237,8 @@ public class BattleManager : ManagerClass
 	{
 		Debug.Log ("Knockback, Knock Val: " + knockVal);
 
-		int diffX = activeToken.posX - (int)targetPos.x;
-		int diffY = activeToken.posY - (int)targetPos.y;
+		int diffX = Mathf.Abs(activeToken.posX - (int)targetPos.x);
+		int diffY = Mathf.Abs(activeToken.posY - (int)targetPos.y);
 
 		BodToken token = battleBoard.tokenPositions[(int)targetPos.x, (int)targetPos.y];
 		Vector2 knockbackPos = Vector2.zero;
@@ -246,6 +246,7 @@ public class BattleManager : ManagerClass
 		// Resolve equal diffs
 		if (diffX == diffY)
 		{
+			Debug.Log("rolling for random diff");
 			if (Random.Range(0, 2) == 0)
 			{
 				diffX ++;
@@ -256,8 +257,11 @@ public class BattleManager : ManagerClass
 			}
 		}
 
+		Debug.Log("Diff X: " + diffX + ", Diff Y: " + diffY);
+
 		if (diffX > diffY)
 		{
+			Debug.Log("Horizontal");
 			// Horizontal move
 			if (activeToken.posX > (int)targetPos.x)
 			{
@@ -286,6 +290,7 @@ public class BattleManager : ManagerClass
 		}
 		else
 		{
+			Debug.Log("Vertical");
 			// Veritical move
 			if (activeToken.posY > (int)targetPos.y)
 			{
@@ -327,6 +332,8 @@ public class BattleManager : ManagerClass
 		{
 			if (token.bodRef == bod)
 			{
+				tokens.Remove(token);
+				turnOrder.Remove(token);
 				battleBoard.tokenPositions[token.posX, token.posY] = null;
 				Destroy(token.gameObject);
 				break;
@@ -336,6 +343,8 @@ public class BattleManager : ManagerClass
 
 	public void NextTurn()
 	{
+		Debug.Log("Next Turn");
+		Debug.Log("Turn Order number: " + turnOrder.Count);
 		turnOrder.RemoveAt(0);
 
 		if (turnOrder.Count <= 0)

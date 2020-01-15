@@ -117,13 +117,13 @@ public class SkillManager : ManagerClass
 						// TODO: Knockback
 						int knockbackVal = blockVal * 2;
 						Debug.Log("Knockback: " + knockbackVal);
-						// while (target.dead == false && atkPower > knockbackVal)
-						// {
-						// 	// Add action text for knockback effect
-						// 	BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
-						// 	BattleManager.instance.Knockback(targetPos);
-						// 	atkPower -= knockbackVal;
-						// }
+						if (target.dead == false && atkPower > knockbackVal)
+						{
+							// Add action text for knockback effect
+							BattleManager.instance.AddActionDisplayText(target.name + " is knocked back!");
+							BattleManager.instance.Knockback(targetPos);
+							atkPower -= knockbackVal;
+						}
 
 						targetToken.spritePackage.StartWaitToSetStanding();
 					}
