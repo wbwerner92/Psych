@@ -102,7 +102,7 @@ public class BodMenu : MonoBehaviour
 		Debug.Log("LP: " + rect.anchoredPosition);
 
 		// Set position and size of Menu
-		Vector2 newSize = new Vector2(250.0f, Mathf.Min(height, rect.sizeDelta.y));
+		Vector2 newSize = new Vector2(150.0f, Mathf.Min(height, rect.sizeDelta.y));
 		Vector2 newPos = new Vector2(rect.anchoredPosition.x, (-1.0f * parentRect.anchoredPosition.y));
 
 		rect.sizeDelta = newSize;
