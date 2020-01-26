@@ -159,8 +159,10 @@ public class ActionMenu : MonoBehaviour
 
 	public void SkillButtonUse(int i)
 	{
+		Debug.Log("Skill Button Use: " + i);
 		if (i > 0 && loadedSkillButtons.Count >= i)
 		{
+			Debug.Log("Found viable skill");
 			ActionSkillButton(loadedSkillButtons[i - 1]);
 		}
 	}

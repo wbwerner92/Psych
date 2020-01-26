@@ -4,6 +4,8 @@ using System.Collections;
 public enum ControlsEvent
 {
 	NONE,
+	SCROLL_UP,
+	SCROLL_DOWN,
 	RETURN,
 	ARROW_LEFT,
 	ARROW_UP,
@@ -84,7 +86,12 @@ public class ControlsManager : ManagerClass
 
 	public void ReadInput()
 	{
-		if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+		var d = Input.GetAxis("Mouse ScrollWheel");
+		if (d > 0)
+			currentEvent = ControlsEvent.SCROLL_UP;
+		else if (d < 0)
+			currentEvent = ControlsEvent.SCROLL_DOWN;
+		else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
 			currentEvent = ControlsEvent.ARROW_DIAGONAL_UP_LEFT;
 		else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
 			currentEvent = ControlsEvent.ARROW_DIAGONAL_UP_RIGHT;
@@ -183,11 +190,14 @@ public class ControlsManager : ManagerClass
 	// Update is called once per frame
 	void Update () 
 	{
+		var d = Input.GetAxis("Mouse ScrollWheel");
+		bool inputRegistered = d != 0 || Input.anyKeyDown;
+
 		if (readActiveInput && Input.anyKey)
 		{
 			ReadInput();
 		}
-		else if (Input.anyKeyDown) 
+		else if (inputRegistered) 
 		{
 			ReadInput();
 		}

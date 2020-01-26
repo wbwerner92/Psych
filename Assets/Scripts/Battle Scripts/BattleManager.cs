@@ -196,7 +196,10 @@ public class BattleManager : ManagerClass
 		if (space.loadedSkill != null)
 			space.PerformLoadedSkill();
 		else
+		{
 			battleBoard.ResetSpaces();
+			token.ToggleBodMenu();
+		}
 	}
 	private void DeselectAll(BodToken ignoreToken = null)
 	{
@@ -510,14 +513,14 @@ public class BattleManager : ManagerClass
 				}
 			}
 			// Move Camera Control Calls
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.KEY_PLUS &&
+			else if ((ControlsManager.instance.controlEvent == ControlsEvent.KEY_PLUS || ControlsManager.instance.controlEvent == ControlsEvent.SCROLL_UP) &&
 						Camera.main.transform.position.z < UniversalValues.maxZoom)
 			{
 				// Zoom in
 				Camera.main.transform.Translate(new Vector3(0, 0, 5));
 				ControlsManager.instance.readActiveInput = true;
 			}
-			else if (ControlsManager.instance.controlEvent == ControlsEvent.KEY_MINUS &&
+			else if ((ControlsManager.instance.controlEvent == ControlsEvent.KEY_MINUS || ControlsManager.instance.controlEvent == ControlsEvent.SCROLL_DOWN) &&
 						Camera.main.transform.position.z > UniversalValues.minZoom)
 			{
 				// Zoom out

@@ -14,5 +14,4 @@ public class ActionSkillButton : MonoBehaviour
 		skillVal = skill;
 		skillText.text = "(" + num + ") " + skill.name;
 	}
-
 }
