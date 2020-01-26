@@ -187,6 +187,8 @@ public class BattleManager : ManagerClass
 		isMoving = false;
 		hasMoved = false;
 
+		CenterCameraOnActiveToken(token);
+
 		AddActionDisplayText("Next Turn: " + activeToken.bodRef.name);
 	}
 	public void SelectTokenButtonPress(BodToken token)
@@ -471,6 +473,14 @@ public class BattleManager : ManagerClass
 		float xVal = actionDisplayScrollRect.anchoredPosition.x;
         actionDisplayScrollRect.anchoredPosition = new Vector2(xVal, 0.0f);
 	}
+
+	public void CenterCameraOnActiveToken(BodToken token)
+	{
+		Debug.Log("Centered Position: " + activeToken.transform.position);
+		Vector3 pos = activeToken.transform.position;
+		Camera.main.transform.position = new Vector3(pos.x, pos.y, Camera.main.transform.position.z);
+	}
+
 	void Update()
 	{
 		if (battleActive && ControlsManager.instance.controlEvent != ControlsEvent.NONE) 
