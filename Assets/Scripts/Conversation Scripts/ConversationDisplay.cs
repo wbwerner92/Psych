@@ -10,6 +10,7 @@ public class ConversationDisplay : MonoBehaviour
     public GameObject responseBG;
     public GameObject responseObjPrefab;
     public Transform responseParentTransform;
+    public GameObject returnResponseObject;
     
     // Conversation Variables
     private ConversationJSON m_currentConversation;
@@ -85,6 +86,8 @@ public class ConversationDisplay : MonoBehaviour
     private void ClearResponseObjects()
     {
         responseBG.SetActive(false);
+        returnResponseObject.SetActive(false);
+        
         if (m_activeResponseObjects == null)
         {
             m_activeResponseObjects = new Dictionary<GameObject, ConversationResponseJSON>();
@@ -101,6 +104,7 @@ public class ConversationDisplay : MonoBehaviour
         Debug.Log("Populate Responses");
         ClearResponseObjects();
         responseBG.SetActive(true);
+        returnResponseObject.SetActive(true);
         foreach (ConversationResponseJSON response in m_currentResponses)
         {
             GameObject responseObj = Instantiate(responseObjPrefab, responseParentTransform);
@@ -143,7 +147,6 @@ public class ConversationDisplay : MonoBehaviour
 
             if (currentText.Length >= fullText.Length)
             {
-                m_currentPrompt = null;
                 PopulateResponseObjects();
             }
             else
@@ -169,6 +172,10 @@ public class ConversationDisplay : MonoBehaviour
         textDisplay.text = "";
 
         HandleResponseActions(response);
+    }
+    public void UI_ReturnResponseClick()
+    {
+        ClearResponseObjects();
     }
 
     void Update()

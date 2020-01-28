@@ -19,7 +19,7 @@ public class SpritePackage : MonoBehaviour
 	public Sprite[] activeEffectSprites;
 	private int m_eff_frame = 0;
 	private float m_eff_deltaTime = 0;
-	private float m_eff_frameSeconds = 0.15f;
+	private float m_eff_frameSeconds = 0.05f;
 
 	public Sprite[] standingSprites;
 	public Sprite[] movingSprites;
@@ -135,7 +135,8 @@ public class SpritePackage : MonoBehaviour
 	}
 	public void SetEffectSprites(string path)
 	{
-		Sprite[] loadedObjs = Resources.LoadAll<Sprite>("Sprites/Effects/" + path);
+		Sprite[] loadedObjs = Resources.LoadAll<Sprite>("Images/Sprites/Effects/" + path);
+		Debug.Log("Num effect obs: "+ loadedObjs.Length);
 		if (loadedObjs != null && loadedObjs.Length > 0)
 		{
 			Debug.Log("Loaded " + loadedObjs.Length + " sprites");
@@ -144,7 +145,9 @@ public class SpritePackage : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Faile to load sprites");
+			Debug.LogError("Failed to load sprites:" + path);
+			activeEffectSprites = null;
+			SetStanding();
 		}
 	}
      
